@@ -880,7 +880,8 @@ function renderProductCard(product, linkUrl, opts = {}) {
 
   return `
     <div class="product-card ${!isAvailable ? 'card-soldout' : ''}" data-category="${filterCategory}" data-brand="${brand}" data-premium="${premium}"
-      onclick="location.href='${linkUrl}'">
+      style="position:relative;" onclick="location.href='${linkUrl}'">
+      <a href="${linkUrl}" aria-label="${name} 상세보기" style="position:absolute;inset:0;z-index:1;" tabindex="-1"></a>
       <div class="product-img-area">
         ${imgHTML}
         ${placeholderHTML}
@@ -920,7 +921,8 @@ function renderRelatedCoins(currentSlug, allEntries, sheetRows) {
     const imgSrc = `../images/${entry.imageFile}`;
     const isCurrent = entry.slug === currentSlug;
     return `
-      <div class="product-card${isCurrent ? ' related-card-current' : ''}" onclick="location.href='${linkUrl}'" style="cursor:pointer;">
+      <div class="product-card${isCurrent ? ' related-card-current' : ''}" onclick="location.href='${linkUrl}'" style="cursor:pointer;position:relative;">
+        <a href="${linkUrl}" aria-label="${escapeAttr(row.name)} 상세보기" style="position:absolute;inset:0;z-index:1;" tabindex="-1"></a>
         <div class="product-img-area">
           <img src="${imgSrc}" alt="${escapeAttr(row.name)}" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
