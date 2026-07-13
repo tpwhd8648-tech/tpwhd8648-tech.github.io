@@ -120,6 +120,42 @@ git clone --filter=blob:none --no-checkout --depth 1 https://github.com/tpwhd864
 4. 토큰은 절대 메모리(memory_user_edits)나 파일, 로그에 저장하지 않는다.
    해당 세션의 작업에만 사용하고 응답에 다시 노출하지 않는다.
 
+## 3-1. 위험도 높은 수정 전 — 백업 브랜치 생성
+
+여러 파일에 걸친 수정, 되돌리기 어려운 구조 변경, 또는 사용자가 명시적으로
+"백업해두자"고 요청하는 경우, 실제 코드 수정을 시작하기 전에 별도 요청 없이
+먼저 백업 브랜치를 만든다. 단순 오타 수정이나 한두 줄짜리 변경까지 매번 만들
+필요는 없다.
+
+**예비용 레포(fork)는 사용하지 않는다** — GitHub Pages가 fork에서도 별도로
+사이트를 배포해버려 duplicate content SEO 리스크가 생기기 때문에, 과거 세션에서
+이미 검토 후 기각된 방식이다. 브랜치만 사용한다(GitHub Pages는 `main` 브랜치만
+빌드/배포하므로 다른 브랜치는 라이브 사이트에 영향 없음).
+
+**절차**:
+```
+git branch backup-YYYY-MM-DD-HHMM origin/main   # KST 기준, TZ='Asia/Seoul' date '+%Y-%m-%d-%H%M'
+git push origin backup-YYYY-MM-DD-HHMM
+```
+- 브랜치명 타임스탬프는 핸드오프 파일명과 동일하게 KST로 통일한다.
+- push 후 `git ls-remote origin refs/heads/backup-...`로 원격 반영을 확인한다.
+
+**롤백이 필요할 때** (반드시 사용자 확인 후 실행, 임의 판단으로 먼저 실행하지 않음):
+```
+git checkout main
+git reset --hard backup-YYYY-MM-DD-HHMM
+git push origin main --force
+```
+- `--force` push는 그 사이 쌓인 커밋들을 `main` 히스토리에서 제거한다(백업
+  브랜치 자체에는 남아있으며, `git reflog`로도 복구 가능하므로 데이터 유실은
+  아니지만 되돌리기 전 항상 사용자에게 재확인한다).
+- 롤백 완료 후 GitHub Actions 재빌드 → GitHub Pages 재배포까지 보통 1분
+  이내 소요된다.
+
+**오래된 백업 브랜치 정리**: 특별히 자동 정리하지 않는다. 브랜치가 많아져도
+GitHub Pages 배포나 저장소 동작에 영향이 없으므로, 사용자가 명시적으로
+정리를 요청할 때만 삭제한다.
+
 ## 4. 작업 마무리 시 — "인수인계 만들어줘" 요청을 받으면
 
 handoff-doc 스킬(`/mnt/skills/user/handoff-doc/SKILL.md`)의 문서 구조(목표/현재상태/
@@ -155,6 +191,10 @@ TZ='Asia/Seoul' date '+%Y-%m-%d-%H%M'
 KST로 알고 있으면서 시간만 별도로 UTC `date` 명령으로 구하는 식)으로 섞어서
 조합하지 않는다 — 한쪽은 KST, 한쪽은 UTC가 되어 날짜·시간이 어긋나는 사고가
 실제로 있었다 (2026-06-21 관련 핸드오프 문서 3건의 날짜/시간 오기, 이후 수정됨).
+
+**백업 브랜치 존재 여부 명시:** 이번 세션에서 섹션 3-1 절차로 백업 브랜치를
+만들었다면, 브랜치명과 어느 커밋(작업 시작 시점) 기준인지를 참고 사항(5번)에
+반드시 남긴다. 다음 세션이 롤백 필요 여부를 판단할 때 참고할 수 있어야 한다.
 
 이번 세션에서 진행한 작업 내용, 변경된 파일 목록, 남은 작업, 다음 세션에서 참고할
 사항을 포함한다.
