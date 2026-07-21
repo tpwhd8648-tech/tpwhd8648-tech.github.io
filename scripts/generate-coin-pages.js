@@ -127,7 +127,7 @@ function buildCoinEntries(sheetRows) {
       specs: desc.specs,
       imageFile: imageEntry.file,
       name: sheetRow.name,
-      brand: sheetRow.brand || 'MIDAS BULLION',
+      brand: sheetRow.brand || 'OneTroy Bullion',
       premium: sheetRow.premium,
       available: sheetRow.available,
     });
@@ -185,7 +185,7 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
       priceValidUntil: priceValidUntil,
       availability: available ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
       itemCondition: 'https://schema.org/NewCondition',
-      seller: { '@type': 'Organization', name: 'MIDAS BULLION' },
+      seller: { '@type': 'Organization', name: 'OneTroy Bullion' },
     },
     additionalProperty: [
       { '@type': 'PropertyValue', name: '순도', value: specs.purity },
@@ -225,25 +225,25 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIDAS BULLION | ${safeName} - 투자 금화 구매</title>
-  <meta name="description" content="${escapeAttr(shortDesc)} 중량, 순도, 발행처 등 상세 정보와 실시간 국제 시세를 확인하고 안전하게 구매하세요. MIDAS BULLION이 정품을 보증합니다.">
+  <title>OneTroy Bullion | ${safeName} - 투자 금화 구매</title>
+  <meta name="description" content="${escapeAttr(shortDesc)} 중량, 순도, 발행처 등 상세 정보와 실시간 국제 시세를 확인하고 안전하게 구매하세요. OneTroy Bullion이 정품을 보증합니다.">
   <link rel="canonical" href="${pageUrl}">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preload" as="image" href="${mainImgUrl}" fetchpriority="high">
   <!-- Open Graph -->
   <meta property="og:type" content="product">
   <meta property="og:url" content="${pageUrl}">
-  <meta property="og:title" content="MIDAS BULLION | ${safeName} - 투자 금화 구매">
+  <meta property="og:title" content="OneTroy Bullion | ${safeName} - 투자 금화 구매">
   <meta property="og:description" content="${escapeAttr(shortDesc)}">
   <meta property="og:image" content="${mainImgUrl}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="1200">
-  <meta property="og:image:alt" content="${coin.name} 금화 - MIDAS BULLION">
-  <meta property="og:site_name" content="MIDAS BULLION">
+  <meta property="og:image:alt" content="${coin.name} 금화 - OneTroy Bullion">
+  <meta property="og:site_name" content="OneTroy Bullion">
   <meta property="og:locale" content="ko_KR">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MIDAS BULLION | ${safeName} - 투자 금화 구매">
+  <meta name="twitter:title" content="OneTroy Bullion | ${safeName} - 투자 금화 구매">
   <meta name="twitter:description" content="${escapeAttr(shortDesc)}">
   <meta name="twitter:image" content="${mainImgUrl}">
   <!-- JSON-LD: Product (price는 빌드 시점 금시세 기준, priceValidUntil로 변동 가능성 명시) -->
@@ -631,7 +631,7 @@ ${relatedHtml}
         // 아직 캐시가 없는 경우엔 nav.js가 updateNavPrices() 완료 후
         // updateCardPricesFromSheet()를 직접 호출해 줌.
         try {
-          const cached = JSON.parse(sessionStorage.getItem('midas_price_cache') || 'null');
+          const cached = JSON.parse(sessionStorage.getItem('onetroy_price_cache') || 'null');
           if (cached && cached.goldPrice && cached.exchangeRate) {
             updateCardPricesFromSheet(cached.goldPrice * cached.exchangeRate);
           }
@@ -930,7 +930,7 @@ function renderRelatedCoins(currentSlug, allEntries, sheetRows) {
           <span class="badge-instock">IN STOCK</span>
         </div>
         <div class="product-info">
-          <p class="product-brand">${escapeHtml(row.brand || 'MIDAS BULLION')}</p>
+          <p class="product-brand">${escapeHtml(row.brand || 'OneTroy Bullion')}</p>
           <h3 class="product-name">${escapeHtml(row.name)}</h3>
           <div class="product-price-wrap">
             <span class="product-price card-price"></span>

@@ -1,6 +1,6 @@
 // ============================================================
 // auth.js — Firebase Authentication 초기화 및 헬퍼
-// MIDAS BULLION (bullion-4d9ef)
+// OneTroy Bullion (bullion-4d9ef)
 //
 // GitHub Pages는 정적 호스팅이라 npm 빌드를 쓸 수 없으므로
 // Firebase JS SDK를 CDN(ES 모듈)으로 불러와 사용합니다.

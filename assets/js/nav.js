@@ -170,8 +170,8 @@
             <circle cx="27" cy="27" r="8" fill="none" stroke="#C8A84B" stroke-width="0.8" opacity="0.6"/>
           </svg>
           <div class="logo-text-block">
-            <span class="logo-brand">MIDAS BULLION</span>
-            <span class="logo-sub-kr">금화는 미다스</span>
+            <span class="logo-brand">OneTroy Bullion</span>
+            <span class="logo-sub-kr">금화는 원트로이</span>
           </div>
         </a>
         <div class="header-search">
@@ -436,7 +436,7 @@
 // ===== 탑바 시세 업데이트 (모든 페이지 공통) =====
 (function () {
   const SHEET_ID = '1gMqKhtWwTAizoBGlrGDpm6sl5c6vmbotGzg3qXl16-w';
-  const CACHE_KEY = 'midas_price_cache';
+  const CACHE_KEY = 'onetroy_price_cache';
   const CACHE_TTL = 30000; // 30초 (setInterval 주기와 동일)
 
   function applyPrices(goldPrice, silverPrice, platPrice, exchangeRate) {
@@ -516,7 +516,7 @@
           <button class="auth-tab active" id="auth-tab-signin" type="button">로그인</button>
           <button class="auth-tab" id="auth-tab-signup" type="button">회원가입</button>
         </div>
-        <h2 id="auth-modal-title" class="auth-modal-title">MIDAS BULLION 로그인</h2>
+        <h2 id="auth-modal-title" class="auth-modal-title">OneTroy Bullion 로그인</h2>
         <form id="auth-form" class="auth-form" novalidate>
           <label class="auth-field">
             <span>이메일</span>
@@ -581,7 +581,7 @@
       if (mode === 'signup') {
         tabSignup.classList.add('active');
         tabSignin.classList.remove('active');
-        title.textContent = 'MIDAS BULLION 회원가입';
+        title.textContent = 'OneTroy Bullion 회원가입';
         passwordInput.autocomplete = 'new-password';
         confirmWrap.style.display = 'flex';
         agreeWrap.style.display = 'flex';
@@ -589,7 +589,7 @@
       } else {
         tabSignin.classList.add('active');
         tabSignup.classList.remove('active');
-        title.textContent = 'MIDAS BULLION 로그인';
+        title.textContent = 'OneTroy Bullion 로그인';
         passwordInput.autocomplete = 'current-password';
         confirmWrap.style.display = 'none';
         agreeWrap.style.display = 'none';
