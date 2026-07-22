@@ -21,7 +21,8 @@
     .logo-wrap { display:flex; align-items:center; gap:14px; text-decoration:none; min-width:0; }
     .logo-symbol { flex-shrink:0; width:54px; height:54px; }
     .logo-text-block { display:flex; flex-direction:column; justify-content:center; min-width:0; overflow:hidden; }
-    .logo-brand { font-family:'Cinzel',serif; font-size:23px; font-weight:700; letter-spacing:3px; line-height:1; background:linear-gradient(135deg,#C8A84B 0%,#F5E090 40%,#C8A84B 60%,#9A7B2E 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .logo-brand { font-family:'Cinzel',serif; font-size:23px; font-weight:700; letter-spacing:3px; line-height:1; text-transform:uppercase; background:linear-gradient(135deg,#C8A84B 0%,#F5E090 40%,#C8A84B 60%,#9A7B2E 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .logo-brand .accent { font-size:1.18em; }
     @media (max-width: 480px) {
       .header-inner { padding-left:14px; padding-right:14px; gap:10px; }
       .logo-symbol { width:40px; height:40px; }
@@ -167,7 +168,7 @@
             <circle cx="27" cy="27" r="8" fill="none" stroke="#C8A84B" stroke-width="0.8" opacity="0.6"/>
           </svg>
           <div class="logo-text-block">
-            <span class="logo-brand">OneTroy Bullion</span>
+            <span class="logo-brand"><span class="accent">O</span>ne<span class="accent">T</span>roy <span class="accent">B</span>ullion</span>
           </div>
         </a>
         <div class="header-search">
