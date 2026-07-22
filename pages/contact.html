@@ -128,8 +128,8 @@
             </a>
           </div>
 
-          <!-- 실제 전화번호 확정 전까지 숨김 (2026-06-23).
-               확정되면 아래 블록 주석 해제 후 실제 번호로 교체할 것.
+          <!-- 실제 전화번호 확정 반영 (2026-07-22). 영업시간은 아직 미확정이라
+               info-sub 줄은 계속 숨김 처리(비워둠) — 확정되면 채울 것. -->
           <div class="info-card">
             <div class="info-card-header">
               <div class="info-icon">
@@ -139,10 +139,8 @@
               </div>
               <h3>PHONE</h3>
             </div>
-            <p class="info-value">02-1234-5678</p>
-            <p class="info-sub">평일 10:00 ~ 18:00</p>
+            <p class="info-value">010-3737-5757</p>
           </div>
-          -->
 
           <!-- 이메일 -->
           <div class="info-card">
@@ -297,25 +295,22 @@
         </div>
       </div>
 
-      <!-- 실제 주소 확정 전까지 지도 섹션 숨김 (2026-06-23).
-           확정되면 아래 블록 주석 해제 후 실제 주소·embed URL로 교체할 것.
-           함께 처리할 것: footer.js의 "오시는 길" 링크(href="contact.html")를
-           href="contact.html#contact-map"으로 다시 바꿀 것 — 지금은 이 블록이
-           주석 처리돼 앵커가 없어서 footer.js 쪽도 임시로 앵커를 뺀 상태임.
+      <!-- 실제 주소 확정 반영 (2026-07-22) — 단, 정식 주소는 아직 미확정이라
+           종로3가역 인근 임시 주소로 우선 표기함. 정식 주소 확정되면 아래
+           주소 텍스트와 iframe src를 교체할 것. -->
       <div id="contact-map" style="margin-top:60px; scroll-margin-top:130px;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
           <div style="width:3px;height:24px;background:#C8A84B;"></div>
           <h3 style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:#1a1a1a;">LOCATION</h3>
-          <span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#aaa;margin-left:4px;">서울특별시 종로구 종로 1가 1번지 (임시 주소)</span>
+          <span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#aaa;margin-left:4px;">서울특별시 종로구 종로3가 10-5 (임시 주소, 종로3가역 인근)</span>
         </div>
         <div style="width:100%;height:380px;border:1px solid #e8e3d8;overflow:hidden;position:relative;">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.4674338371!2d126.97930!3d37.57037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2e4a6b4c285%3A0x5e3b4c2e2b1e4b5a!2z7IiY66-467KV7J207YyF!5e0!3m2!1sko!2skr!4v1680000000000!5m2!1sko!2skr"
+            src="https://www.google.com/maps?q=%EC%A2%85%EB%A1%9C3%EA%B0%80%EC%97%AD&output=embed"
             width="100%" height="100%" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
       </div>
-      -->
 
     </div>
   </section>
