@@ -565,7 +565,7 @@ ${relatedHtml}
 
   <script type="module" src="../assets/js/auth.js"></script>
   <script src="../assets/js/footer.js"></script>
-  <script src="../assets/js/nav.js"></script>
+  <script src="../assets/js/nav.js?v=20260722"></script>
   <script src="../assets/js/coin-data.js"></script>
   <script src="../assets/js/products.js"></script>
   <script>
