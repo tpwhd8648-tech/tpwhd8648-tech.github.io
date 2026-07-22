@@ -21,19 +21,19 @@
     .logo-wrap { display:flex; align-items:center; gap:14px; text-decoration:none; min-width:0; }
     .logo-symbol { flex-shrink:0; width:54px; height:54px; }
     .logo-text-block { display:flex; flex-direction:column; justify-content:center; min-width:0; overflow:hidden; }
-    .logo-brand { font-family:'Cinzel',serif; font-size:23px; font-weight:700; letter-spacing:3px; line-height:1; background:linear-gradient(135deg,#C8A84B 0%,#F5E090 40%,#C8A84B 60%,#9A7B2E 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .logo-brand { font-family:'Playfair Display',serif; font-size:24px; font-weight:600; letter-spacing:0.5px; line-height:1; background:linear-gradient(135deg,#C8A84B 0%,#F5E090 40%,#C8A84B 60%,#9A7B2E 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     @media (max-width: 480px) {
       .header-inner { padding-left:14px; padding-right:14px; gap:10px; }
       .logo-symbol { width:40px; height:40px; }
       .logo-wrap { gap:10px; }
-      .logo-brand { font-size:19px; letter-spacing:1.5px; }
+      .logo-brand { font-size:19px; letter-spacing:0.3px; }
       .header-icons { gap:2px; }
       .icon-btn { padding:6px; }
     }
     @media (max-width: 350px) {
       .logo-symbol { width:32px; height:32px; }
       .logo-wrap { gap:8px; }
-      .logo-brand { font-size:16px; letter-spacing:1px; }
+      .logo-brand { font-size:16px; letter-spacing:0px; }
     }
     .custom-dropdown { position:relative; }
     .custom-dropdown-btn {
