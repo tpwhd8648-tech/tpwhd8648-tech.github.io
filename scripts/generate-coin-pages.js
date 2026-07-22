@@ -229,6 +229,7 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
   <meta name="description" content="${escapeAttr(shortDesc)} 중량, 순도, 발행처 등 상세 정보와 실시간 국제 시세를 확인하고 안전하게 구매하세요. OneTroy Bullion이 정품을 보증합니다.">
   <link rel="canonical" href="${pageUrl}">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
   <link rel="preload" as="image" href="${mainImgUrl}" fetchpriority="high">
   <!-- Open Graph -->
   <meta property="og:type" content="product">
