@@ -122,6 +122,7 @@
               <h3>KAKAO TALK</h3>
             </div>
             <p class="info-value">원트로이불리온</p>
+            <p class="info-sub">24시간 문의 가능</p>
             <a href="https://open.kakao.com/o/sB6Gduni" target="_blank" rel="noopener" class="kakao-btn" style="margin-top:14px;">
               <svg width="20" height="20" viewBox="0 0 32 32" fill="none"><path d="M16 2C8.27 2 2 7.37 2 14c0 4.2 2.65 7.9 6.67 10.1L7.1 28.8a.6.6 0 0 0 .84.76l6.4-4.27c.54.05 1.09.08 1.66.08 7.73 0 14-5.37 14-12S23.73 2 16 2z" fill="#3C1E1E"/></svg>
               카카오톡으로 문의하기
@@ -157,7 +158,11 @@
             <p class="info-sub">24시간 접수 · 영업일 기준 1일 내 답변</p>
           </div>
 
-          <!-- 운영시간 -->
+          <!-- 영업시간 확정 반영 (2026-07-22): 매일 09:00-20:00.
+               요일별/공휴일 구분 안내가 따로 없어 "매일 동일"로 가정하고 단일
+               행으로 표시함. 요일별로 다르게 운영할 경우 hours-row를 다시
+               나눠서 반영할 것. 카카오톡 문의는 24시간 별도 운영(위 KAKAO
+               TALK 카드의 info-sub 참고). -->
           <div class="info-card">
             <div class="info-card-header">
               <div class="info-icon">
@@ -169,10 +174,7 @@
               <h3>HOURS</h3>
             </div>
             <div class="hours-grid">
-              <div class="hours-row"><span class="day">월 — 금</span><span class="time">10:00 – 18:00</span></div>
-              <div class="hours-row"><span class="day">점심시간</span><span class="time">12:00 – 13:00</span></div>
-              <div class="hours-row closed"><span class="day">토 · 일</span><span class="time">휴무</span></div>
-              <div class="hours-row closed"><span class="day">공휴일</span><span class="time">휴무</span></div>
+              <div class="hours-row"><span class="day">매일</span><span class="time">09:00 – 20:00</span></div>
             </div>
           </div>
 
