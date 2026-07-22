@@ -930,7 +930,7 @@ function renderRelatedCoins(currentSlug, allEntries, sheetRows) {
           <span class="badge-instock">IN STOCK</span>
         </div>
         <div class="product-info">
-          <p class="product-brand">${escapeHtml(row.brand || 'OneTroy Bullion')}</p>
+          <p class="product-brand">${escapeHtml(row.brand || 'ONETROY BULLION')}</p>
           <h3 class="product-name">${escapeHtml(row.name)}</h3>
           <div class="product-price-wrap">
             <span class="product-price card-price"></span>

@@ -21,19 +21,19 @@
     .logo-wrap { display:flex; align-items:center; gap:14px; text-decoration:none; min-width:0; }
     .logo-symbol { flex-shrink:0; width:54px; height:54px; }
     .logo-text-block { display:flex; flex-direction:column; justify-content:center; min-width:0; overflow:hidden; }
-    .logo-brand { font-family:'Playfair Display',serif; font-size:24px; font-weight:600; letter-spacing:0.5px; line-height:1; background:linear-gradient(135deg,#C8A84B 0%,#F5E090 40%,#C8A84B 60%,#9A7B2E 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .logo-brand { font-family:'Playfair Display',serif; font-size:24px; font-weight:600; letter-spacing:1.5px; line-height:1; text-transform:uppercase; background:linear-gradient(135deg,#C8A84B 0%,#F5E090 40%,#C8A84B 60%,#9A7B2E 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     @media (max-width: 480px) {
       .header-inner { padding-left:14px; padding-right:14px; gap:10px; }
       .logo-symbol { width:40px; height:40px; }
       .logo-wrap { gap:10px; }
-      .logo-brand { font-size:19px; letter-spacing:0.3px; }
+      .logo-brand { font-size:19px; letter-spacing:1px; }
       .header-icons { gap:2px; }
       .icon-btn { padding:6px; }
     }
     @media (max-width: 350px) {
       .logo-symbol { width:32px; height:32px; }
       .logo-wrap { gap:8px; }
-      .logo-brand { font-size:16px; letter-spacing:0px; }
+      .logo-brand { font-size:16px; letter-spacing:0.5px; }
     }
     .custom-dropdown { position:relative; }
     .custom-dropdown-btn {
@@ -512,7 +512,7 @@
           <button class="auth-tab active" id="auth-tab-signin" type="button">로그인</button>
           <button class="auth-tab" id="auth-tab-signup" type="button">회원가입</button>
         </div>
-        <h2 id="auth-modal-title" class="auth-modal-title">OneTroy Bullion 로그인</h2>
+        <h2 id="auth-modal-title" class="auth-modal-title">ONETROY BULLION 로그인</h2>
         <form id="auth-form" class="auth-form" novalidate>
           <label class="auth-field">
             <span>이메일</span>
@@ -577,7 +577,7 @@
       if (mode === 'signup') {
         tabSignup.classList.add('active');
         tabSignin.classList.remove('active');
-        title.textContent = 'OneTroy Bullion 회원가입';
+        title.textContent = 'ONETROY BULLION 회원가입';
         passwordInput.autocomplete = 'new-password';
         confirmWrap.style.display = 'flex';
         agreeWrap.style.display = 'flex';
@@ -585,7 +585,7 @@
       } else {
         tabSignin.classList.add('active');
         tabSignup.classList.remove('active');
-        title.textContent = 'OneTroy Bullion 로그인';
+        title.textContent = 'ONETROY BULLION 로그인';
         passwordInput.autocomplete = 'current-password';
         confirmWrap.style.display = 'none';
         agreeWrap.style.display = 'none';
