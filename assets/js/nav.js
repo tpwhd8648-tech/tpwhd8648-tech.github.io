@@ -167,7 +167,7 @@
             <circle cx="27" cy="27" r="8" fill="none" stroke="#C8A84B" stroke-width="0.8" opacity="0.6"/>
           </svg>
           <div class="logo-text-block">
-            <span class="logo-brand">ONETROY BULLION</span>
+            <span class="logo-brand">OneTroy Bullion</span>
           </div>
         </a>
         <div class="header-search">
