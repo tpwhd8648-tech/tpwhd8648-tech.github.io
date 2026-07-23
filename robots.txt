@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /pages/mypage.html
 
 Sitemap: https://tpwhd8648-tech.github.io/sitemap.xml
