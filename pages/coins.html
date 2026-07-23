@@ -741,6 +741,14 @@
         banner.style.cssText = 'grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:13px;color:#666;font-family:"Noto Sans KR",sans-serif;';
         banner.innerHTML = `<span>'${escapeHTML(queryKeyword)}' 검색 결과</span><a href="/pages/coins.html" style="color:#C8A84B;text-decoration:none;">전체 상품 보기 ›</a>`;
         grid.parentNode.insertBefore(banner, grid);
+      } else if (queryKeyword && !matched) {
+        // 검색 결과 0건 안내 배너 (2026-07-23 추가): 안내만 하고 아래에는
+        // 기존 정책대로 필터 없이 전체 상품을 계속 보여준다(이탈 방지 목적).
+        const banner = document.createElement('div');
+        banner.id = 'query-filter-banner';
+        banner.style.cssText = 'grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:13px;color:#666;font-family:"Noto Sans KR",sans-serif;';
+        banner.innerHTML = `<span>'${escapeHTML(queryKeyword)}' 검색 결과가 없습니다. 전체 상품을 보여드릴게요.</span>`;
+        grid.parentNode.insertBefore(banner, grid);
       }
 
       grid.innerHTML = sorted.map(p => createProductCard(p, currentKrwPrice, COINS_CARD_OPTIONS)).join('');
