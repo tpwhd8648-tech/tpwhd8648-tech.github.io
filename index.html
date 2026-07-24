@@ -107,6 +107,20 @@
         keyword: ''
       },
       {
+        images: [
+          'images/hero-gold-coins-collection.jpg',
+          'images/hero-gold-coins-collection-2.jpg',
+          'images/hero-gold-coins-collection-3.jpg',
+          'images/hero-gold-coins-collection-4.jpg',
+          'images/hero-gold-coins-collection-5.jpg'
+        ],
+        badge: 'WORLD MINT COLLECTION',
+        title: '전 세계 정품 조폐국의<br>골드 컬렉션',
+        subtitle: '크루거랜드 · 필하모닉 · 메이플리프 · 이글<br>엄선된 투자용 금화',
+        btnText: '전체 상품 보기 ›',
+        keyword: ''
+      },
+      {
         image: 'images/header-slide-eagle.jpg',
         badge: 'US MINT · 아메리칸 이글',
         title: '아메리칸 이글<br>골드 코인 2026',
@@ -144,14 +158,43 @@
       const track = document.getElementById('slider-track');
       const dotsWrap = document.getElementById('slider-dots');
 
+      const CYCLE_SEC = 4; // 이미지 1장당 노출 시간(초)
+      if (!document.getElementById('hero-bg-cycle-style')) {
+        const styleEl = document.createElement('style');
+        styleEl.id = 'hero-bg-cycle-style';
+        document.head.appendChild(styleEl);
+      }
+      const cycleStyleEl = document.getElementById('hero-bg-cycle-style');
+      let cycleKeyframesCss = '';
+
       track.innerHTML = heroSlides.map((s, i) => {
-        const bgStyle = (s.image && !s.video)
+        const bgStyle = (s.image && !s.video && !s.images)
           ? ` style="background:linear-gradient(105deg, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0.2) 100%), url('${s.image}') center/cover no-repeat;"`
           : '';
-        const slideClass = s.image || s.video ? 'slide' : 'slide slide-1';
+        const slideClass = s.image || s.video || s.images ? 'slide' : 'slide slide-1';
         const videoBg = s.video
           ? `<video class="slide-video-bg" autoplay muted loop playsinline preload="auto" poster="${s.image || ''}"><source src="${s.video}" type="video/mp4"></video><div class="slide-video-overlay"></div>`
           : '';
+        let cycleBg = '';
+        if (s.images && s.images.length) {
+          const n = s.images.length;
+          const duration = n * CYCLE_SEC;
+          const onPct = 100 / n;
+          const fadePct = Math.min(2, onPct / 4);
+          const kfName = `heroBgCycle${i}`;
+          cycleKeyframesCss += `
+            @keyframes ${kfName} {
+              0% { opacity: 0; }
+              ${fadePct.toFixed(2)}% { opacity: 1; }
+              ${(onPct - fadePct).toFixed(2)}% { opacity: 1; }
+              ${onPct.toFixed(2)}% { opacity: 0; }
+              100% { opacity: 0; }
+            }
+          `;
+          cycleBg = `<div class="slide-bg-cycle">` + s.images.map((img, idx) =>
+            `<div class="bg-img" style="background-image:url('${img}'); animation: ${kfName} ${duration}s infinite; animation-delay: ${idx * CYCLE_SEC}s;"></div>`
+          ).join('') + `</div><div class="slide-media-overlay"></div>`;
+        }
         const href = s.slug
           ? `coins/coin-${s.slug}.html`
           : `pages/coins.html?q=${encodeURIComponent(s.keyword || '')}`;
@@ -161,6 +204,7 @@
         return `
       <div class="${slideClass}"${bgStyle}>
         ${videoBg}
+        ${cycleBg}
         <div class="slide-content">
           <div class="slide-badge">${s.badge}</div>
           <h1 class="slide-title">${s.title}</h1>
@@ -169,6 +213,8 @@
         </div>
       </div>`;
       }).join('');
+
+      if (cycleStyleEl) cycleStyleEl.textContent = cycleKeyframesCss;
 
       dotsWrap.innerHTML = heroSlides
         .map((_, i) => `<span class="dot${i === 0 ? ' active' : ''}"></span>`)
