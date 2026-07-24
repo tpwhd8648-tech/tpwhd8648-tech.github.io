@@ -103,7 +103,6 @@
         video: 'videos/hero-intro.mp4',
         badge: 'ONETROY BULLION',
         title: '투자의 시작<br>원트로이 불리온',
-        subtitle: '정품 인증 투자용 금·은화<br>전 세계 조폐국 공식 수입',
         btnText: '전체 상품 보기 ›',
         keyword: ''
       },
@@ -156,13 +155,16 @@
         const href = s.slug
           ? `coins/coin-${s.slug}.html`
           : `pages/coins.html?q=${encodeURIComponent(s.keyword || '')}`;
+        const subtitleHtml = s.subtitle
+          ? `<p class="slide-subtitle">${s.subtitle}</p>`
+          : '';
         return `
       <div class="${slideClass}"${bgStyle}>
         ${videoBg}
         <div class="slide-content">
           <div class="slide-badge">${s.badge}</div>
           <h1 class="slide-title">${s.title}</h1>
-          <p class="slide-subtitle">${s.subtitle}</p>
+          ${subtitleHtml}
           <a href="${href}" class="slide-btn">${s.btnText}</a>
         </div>
       </div>`;
