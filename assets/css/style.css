@@ -88,9 +88,9 @@ img { max-width: 100%; display: block; }
 /* ===== CATEGORY BANNERS ===== */
 .category-banners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
 .cat-banner { position: relative; height: 280px; overflow: hidden; cursor: pointer; }
-.cat-gold { background: linear-gradient(135deg, #8B6914, #D4A017), url('https://images.unsplash.com/photo-1573408301185-9519f94815b7?w=600&q=80') center/cover no-repeat; background-blend-mode: multiply; }
-.cat-silver { background: linear-gradient(135deg, #555, #aaa), url('https://images.unsplash.com/photo-1600348759986-c53b6a9b5b14?w=600&q=80') center/cover no-repeat; background-blend-mode: multiply; }
-.cat-collectible { background: linear-gradient(135deg, #1a6b4a, #2ecc71), url('https://images.unsplash.com/photo-1611095562057-14cc9e1fa7c5?w=600&q=80') center/cover no-repeat; background-blend-mode: multiply; }
+.cat-gold { background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url('../../images/header-slide-eagle.jpg') center/cover no-repeat; }
+.cat-silver { background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url('../../images/header-slide-buffalo.jpg') center/cover no-repeat; }
+.cat-collectible { background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url('../../images/header-slide-kangaroo.jpg') center/cover no-repeat; }
 .cat-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); transition: background 0.3s; }
 .cat-banner:hover .cat-overlay { background: rgba(0,0,0,0.15); }
 .cat-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
