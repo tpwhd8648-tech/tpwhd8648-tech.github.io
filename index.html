@@ -93,10 +93,20 @@
     // ===== 히어로 슬라이드 데이터 =====
     // 슬라이드 추가/교체는 이 배열만 수정하면 됩니다. HTML/dot/슬라이더 로직은 자동 반영됩니다.
     // image: null이면 slide-1의 기본 골드 그라데이션 배경을 사용합니다.
+    // video: mp4 경로를 지정하면 image 대신 배경 영상이 재생됩니다(자동재생/무음/반복).
+    //        video가 있으면 image는 무시됩니다.
     // slug: coins/ 폴더의 파일명에서 'coin-' 제거한 값 (예: 'buffalo-2026').
     //       slug가 있으면 coins/coin-{slug}.html로 직접 이동.
     //       slug가 없으면 coins.html?q={keyword}로 폴백 (시리즈 탐색 등 여러 상품 묶음용).
     const heroSlides = [
+      {
+        video: 'videos/hero-intro.mp4',
+        badge: 'ONETROY BULLION',
+        title: '투자의 시작<br>원트로이 불리온',
+        subtitle: '정품 인증 투자용 금·은화<br>전 세계 조폐국 공식 수입',
+        btnText: '전체 상품 보기 ›',
+        keyword: ''
+      },
       {
         image: 'images/header-slide-eagle.jpg',
         badge: 'US MINT · 아메리칸 이글',
@@ -136,15 +146,19 @@
       const dotsWrap = document.getElementById('slider-dots');
 
       track.innerHTML = heroSlides.map((s, i) => {
-        const bgStyle = s.image
+        const bgStyle = (s.image && !s.video)
           ? ` style="background:linear-gradient(105deg, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0.2) 100%), url('${s.image}') center/cover no-repeat;"`
           : '';
-        const slideClass = s.image ? 'slide' : 'slide slide-1';
+        const slideClass = s.image || s.video ? 'slide' : 'slide slide-1';
+        const videoBg = s.video
+          ? `<video class="slide-video-bg" autoplay muted loop playsinline preload="auto" poster="${s.image || ''}"><source src="${s.video}" type="video/mp4"></video><div class="slide-video-overlay"></div>`
+          : '';
         const href = s.slug
           ? `coins/coin-${s.slug}.html`
           : `pages/coins.html?q=${encodeURIComponent(s.keyword || '')}`;
         return `
       <div class="${slideClass}"${bgStyle}>
+        ${videoBg}
         <div class="slide-content">
           <div class="slide-badge">${s.badge}</div>
           <h1 class="slide-title">${s.title}</h1>
