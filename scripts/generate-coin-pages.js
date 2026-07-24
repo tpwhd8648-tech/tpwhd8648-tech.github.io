@@ -225,7 +225,7 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OneTroy Bullion | ${safeName} - 투자 금화 구매</title>
+  <title>OneTroy Bullion | ${safeName} 시세·가격 - 투자 금화</title>
   <meta name="description" content="${escapeAttr(shortDesc)} 중량, 순도, 발행처 등 상세 정보와 실시간 국제 시세를 확인하고 안전하게 구매하세요. OneTroy Bullion이 정품을 보증합니다.">
   <link rel="canonical" href="${pageUrl}">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -234,7 +234,7 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
   <!-- Open Graph -->
   <meta property="og:type" content="product">
   <meta property="og:url" content="${pageUrl}">
-  <meta property="og:title" content="OneTroy Bullion | ${safeName} - 투자 금화 구매">
+  <meta property="og:title" content="OneTroy Bullion | ${safeName} 시세·가격 - 투자 금화">
   <meta property="og:description" content="${escapeAttr(shortDesc)}">
   <meta property="og:image" content="${mainImgUrl}">
   <meta property="og:image:width" content="1200">
@@ -244,7 +244,7 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
   <meta property="og:locale" content="ko_KR">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OneTroy Bullion | ${safeName} - 투자 금화 구매">
+  <meta name="twitter:title" content="OneTroy Bullion | ${safeName} 시세·가격 - 투자 금화">
   <meta name="twitter:description" content="${escapeAttr(shortDesc)}">
   <meta name="twitter:image" content="${mainImgUrl}">
   <!-- JSON-LD: Product (price는 빌드 시점 금시세 기준, priceValidUntil로 변동 가능성 명시) -->
