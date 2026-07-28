@@ -1,3 +1,17 @@
+/* ── Google Analytics 4 (GA4) ── */
+(function () {
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2T60WHRDLX';
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-2T60WHRDLX');
+})();
+
 (function () {
 
   /* ── 스타일 주입 (구 nav.css) ── */
