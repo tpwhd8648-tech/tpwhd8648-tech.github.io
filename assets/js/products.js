@@ -105,7 +105,7 @@ function createProductCard(product, krwPrice, options) {
         <p class="product-brand">${brand}</p>
         <h3 class="product-name">${name}</h3>
         <div class="product-price-wrap">
-          <span class="product-price card-price">${isAvailable ? price : '품절'}</span>
+          <span class="product-price">${isAvailable ? price : '품절'}</span>
         </div>
         <div class="btn-cart-wrap">
           ${btnHTML}

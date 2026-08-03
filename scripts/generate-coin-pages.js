@@ -892,7 +892,7 @@ function renderProductCard(product, linkUrl, opts = {}) {
         <p class="product-brand">${brand}</p>
         <h3 class="product-name">${name}</h3>
         <div class="product-price-wrap">
-          <span class="product-price card-price">${isAvailable ? '' : '-'}</span>
+          <span class="product-price">${isAvailable ? '' : '-'}</span>
         </div>
         <div class="btn-cart-wrap">
           ${btnHTML}
@@ -934,7 +934,7 @@ function renderRelatedCoins(currentSlug, allEntries, sheetRows) {
           <p class="product-brand">${escapeHtml(row.brand || 'ONETROY BULLION')}</p>
           <h3 class="product-name">${escapeHtml(row.name)}</h3>
           <div class="product-price-wrap">
-            <span class="product-price card-price"></span>
+            <span class="product-price"></span>
           </div>
           <div class="btn-cart-wrap">
             <button class="btn-cart btn-buy" onclick="event.stopPropagation(); location.href='${linkUrl}'">상품 보기</button>
