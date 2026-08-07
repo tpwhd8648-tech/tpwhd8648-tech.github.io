@@ -11,6 +11,16 @@
 - `gold-lowpoly-soft.svg` / `silver-lowpoly-soft.svg` / `bronze-lowpoly-soft.svg`
   → 대비를 압축한 연화 톤. 텍스트/버튼 가독성을 고려한 버전.
 
+## A안/B안 비교 (직접 브라우저로 열어서 확인 가능)
+`preview-A안-B안.html`을 브라우저로 열면 실제 텍스트/버튼까지 합친 최종 형태로
+두 안을 비교할 수 있음 (상대경로로 이 폴더의 svg를 그대로 참조하므로 별도 설정
+없이 바로 열림).
+- A안: `.cat-*-soft.svg` + 중앙 방사형 스크림(radial-gradient, 텍스트 중앙 정렬)
+- B안: `.cat-*.svg`(원본 진한 톤) + 텍스트 뒤 반투명 카드
+  (`background:rgba(10,8,4,0.5)`, `backdrop-filter:blur(2px)`, 흰 테두리)
+- 두 안 모두 코인 실사진 없이 배경+텍스트만 사용한 버전 (코인 합성 여부는
+  별도 미결정 사항, handoff 문서 참고)
+
 ## 재생성 방법
 `scripts/generate-category-banners.py` 참고 (numpy, scipy 필요).
 포인트 시드값, 색상 스톱(GOLD_STOPS 등), 조명 방향(light_dir) 등을 조정해

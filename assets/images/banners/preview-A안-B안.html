@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>카테고리 배너 가독성 A안/B안 비교 (레포 저장용)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background:#111; font-family:'Malgun Gothic',sans-serif; }
+  .wrap { max-width:1300px; margin:0 auto; }
+  .label { color:#ccc; font-size:14px; padding:16px 8px 6px; }
+  .banner { position:relative; height:280px; display:flex; align-items:center; justify-content:center; overflow:hidden; margin-bottom:6px; }
+  h3 { color:#fff; font-family:'Noto Serif KR',serif; font-size:28px; font-weight:700; letter-spacing:2px; margin:0 0 16px; }
+  .btn { display:inline-block; border:1px solid #fff; color:#fff; padding:9px 26px; font-size:13px; letter-spacing:1px; background:rgba(0,0,0,0.1); }
+
+  /* A안: 연화(soft) 톤 + 중앙 방사형 스크림 */
+  .bg-soft-gold { background:url('gold-lowpoly-soft.svg') center/cover; }
+  .bg-soft-silver { background:url('silver-lowpoly-soft.svg') center/cover; }
+  .bg-soft-bronze { background:url('bronze-lowpoly-soft.svg') center/cover; }
+  .scrim-center { position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0.05) 100%); }
+  .content { position:relative; z-index:2; text-align:center; }
+
+  /* B안: 원본 진한 톤 그대로 + 텍스트 뒤 반투명 카드 */
+  .bg-vivid-gold { background:url('gold-lowpoly.svg') center/cover; }
+  .bg-vivid-silver { background:url('silver-lowpoly.svg') center/cover; }
+  .bg-vivid-bronze { background:url('bronze-lowpoly.svg') center/cover; }
+  .card { position:relative; z-index:2; background:rgba(10,8,4,0.5); backdrop-filter:blur(2px); padding:26px 46px; text-align:center; border:1px solid rgba(255,255,255,0.25); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="label">A안 — 대비 압축(soft) 톤 + 중앙 방사형 스크림 (전체적으로 은은하게)</div>
+  <div class="banner bg-soft-gold"><div class="scrim-center"></div><div class="content"><h3>금화</h3><span class="btn">구매하기</span></div></div>
+  <div class="banner bg-soft-silver"><div class="scrim-center"></div><div class="content"><h3>은화</h3><span class="btn">시세 확인</span></div></div>
+  <div class="banner bg-soft-bronze"><div class="scrim-center"></div><div class="content"><h3>희귀 컬렉션</h3><span class="btn">문의하기</span></div></div>
+
+  <div class="label">B안 — 원본 강한 대비 그대로 유지 + 텍스트 뒤 반투명 카드(패널)로 가독성 확보</div>
+  <div class="banner bg-vivid-gold"><div class="card"><h3>금화</h3><span class="btn">구매하기</span></div></div>
+  <div class="banner bg-vivid-silver"><div class="card"><h3>은화</h3><span class="btn">시세 확인</span></div></div>
+  <div class="banner bg-vivid-bronze"><div class="card"><h3>희귀 컬렉션</h3><span class="btn">문의하기</span></div></div>
+</div>
+</body>
+</html>
