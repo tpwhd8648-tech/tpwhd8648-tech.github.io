@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cinzel+Decorative:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=e3802c80">
+  <link rel="stylesheet" href="assets/css/style.css?v=03d190a8">
   <style>
     /* 카드 공통 CSS → style.css로 이동 */
     #products-grid { box-sizing: border-box; }
@@ -82,7 +82,21 @@
   <div id="nav-mobile"></div>
 
   <!-- Hero Slider -->
-  <section class="hero-slider" id="hero">
+  <!-- Video Hero: 영상 1개, 화살표/점 없음 (dozn 스타일 참고) -->
+  <section class="video-hero" id="hero">
+    <video class="slide-video-bg" autoplay muted loop playsinline preload="auto">
+      <source src="videos/hero-intro.mp4" type="video/mp4">
+    </video>
+    <div class="slide-video-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-badge">ONETROY BULLION</div>
+      <h1 class="slide-title">투자의 시작<br>원트로이 불리온</h1>
+      <a href="pages/coins.html" class="slide-btn">전체 상품 보기 ›</a>
+    </div>
+  </section>
+
+  <!-- Coin Collection Slider -->
+  <section class="hero-slider" id="coin-slider">
     <div class="slider-track" id="slider-track"></div>
     <button class="slider-btn slider-prev" id="slider-prev">&#8592;</button>
     <button class="slider-btn slider-next" id="slider-next">&#8594;</button>
@@ -90,22 +104,13 @@
   </section>
 
   <script>
-    // ===== 히어로 슬라이드 데이터 =====
+    // ===== 코인 컬렉션 슬라이드 데이터 =====
     // 슬라이드 추가/교체는 이 배열만 수정하면 됩니다. HTML/dot/슬라이더 로직은 자동 반영됩니다.
     // image: null이면 slide-1의 기본 골드 그라데이션 배경을 사용합니다.
-    // video: mp4 경로를 지정하면 image 대신 배경 영상이 재생됩니다(자동재생/무음/반복).
-    //        video가 있으면 image는 무시됩니다.
     // slug: coins/ 폴더의 파일명에서 'coin-' 제거한 값 (예: 'buffalo-2026').
     //       slug가 있으면 coins/coin-{slug}.html로 직접 이동.
     //       slug가 없으면 coins.html?q={keyword}로 폴백 (시리즈 탐색 등 여러 상품 묶음용).
     const heroSlides = [
-      {
-        video: 'videos/hero-intro.mp4',
-        badge: 'ONETROY BULLION',
-        title: '투자의 시작<br>원트로이 불리온',
-        btnText: '전체 상품 보기 ›',
-        keyword: ''
-      },
       {
         images: [
           'images/hero-gold-coins-collection.jpg',
@@ -168,13 +173,10 @@
       let cycleKeyframesCss = '';
 
       track.innerHTML = heroSlides.map((s, i) => {
-        const bgStyle = (s.image && !s.video && !s.images)
+        const bgStyle = (s.image && !s.images)
           ? ` style="background:linear-gradient(105deg, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0.2) 100%), url('${s.image}') center/cover no-repeat;"`
           : '';
-        const slideClass = s.image || s.video || s.images ? 'slide' : 'slide slide-1';
-        const videoBg = s.video
-          ? `<video class="slide-video-bg" autoplay muted loop playsinline preload="auto" poster="${s.image || ''}"><source src="${s.video}" type="video/mp4"></video><div class="slide-video-overlay"></div>`
-          : '';
+        const slideClass = s.image || s.images ? 'slide' : 'slide slide-1';
         let cycleBg = '';
         if (s.images && s.images.length) {
           const n = s.images.length;
@@ -203,7 +205,6 @@
           : '';
         return `
       <div class="${slideClass}"${bgStyle}>
-        ${videoBg}
         ${cycleBg}
         <div class="slide-content">
           <div class="slide-badge">${s.badge}</div>
