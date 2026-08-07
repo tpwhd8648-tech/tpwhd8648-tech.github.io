@@ -70,7 +70,7 @@
           <div class="social-icons">
             <!-- facebook/instagram/youtube/line: 실제 연결된 계정이 없는
                  죽은 아이콘이라 삭제함 (2026-06-21). 실제 계정이 생기면 다시 추가. -->
-            <a href="https://open.kakao.com/o/sB6Gduni" target="_blank" rel="noopener" class="social-icon kakao" style="display:flex;align-items:center;justify-content:center;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.27 2 2 7.37 2 14c0 4.2 2.65 7.9 6.67 10.1L7.1 28.8a.6.6 0 0 0 .84.76l6.4-4.27c.54.05 1.09.08 1.66.08 7.73 0 14-5.37 14-12S23.73 2 16 2z" fill="#3C1E1E"/><text x="16" y="15.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="900" fill="#FEE500" letter-spacing="0.3">KAKAO</text></svg></a>
+            <a href="https://open.kakao.com/o/sB6Gduni" target="_blank" rel="noopener" class="social-icon kakao" style="display:flex;align-items:center;justify-content:center;border-radius:30%;overflow:hidden;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.27 2 2 7.37 2 14c0 4.2 2.65 7.9 6.67 10.1L7.1 28.8a.6.6 0 0 0 .84.76l6.4-4.27c.54.05 1.09.08 1.66.08 7.73 0 14-5.37 14-12S23.73 2 16 2z" fill="#3C1E1E"/><text x="16" y="16.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="900" fill="#FEE500" letter-spacing="0.2">TALK</text></svg></a>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
     .kakao-float {
       position: fixed; right: 20px; bottom: 80px;
       width: 54px; height: 54px;
-      background: #FEE500; border-radius: 50%;
+      background: #FEE500; border-radius: 30%;
       display: flex; align-items: center; justify-content: center;
       z-index: 2000;
       box-shadow: 0 0 0 3px #C8A84B, 0 4px 16px rgba(0,0,0,0.25);
@@ -127,7 +127,7 @@
   link.innerHTML = `
     <svg width="46" height="46" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M16 2C8.27 2 2 7.37 2 14c0 4.2 2.65 7.9 6.67 10.1L7.1 28.8a.6.6 0 0 0 .84.76l6.4-4.27c.54.05 1.09.08 1.66.08 7.73 0 14-5.37 14-12S23.73 2 16 2z" fill="#3C1E1E"/>
-      <text x="16" y="15.8" text-anchor="middle" font-family="'Arial', sans-serif" font-size="7" font-weight="900" fill="#FEE500" letter-spacing="0.3">KAKAO</text>
+      <text x="16" y="16.3" text-anchor="middle" font-family="'Arial', sans-serif" font-size="9" font-weight="900" fill="#FEE500" letter-spacing="0.2">TALK</text>
     </svg>
   `;
   document.body.appendChild(link);
