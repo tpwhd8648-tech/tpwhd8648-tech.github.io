@@ -92,11 +92,11 @@ img { max-width: 100%; display: block; }
 /* ===== CATEGORY BANNERS ===== */
 .category-banners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
 .cat-banner { position: relative; height: 280px; overflow: hidden; cursor: pointer; }
-.cat-gold { background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url('../../images/header-slide-eagle.jpg') center/cover no-repeat; }
-.cat-silver { background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url('../../images/header-slide-buffalo.jpg') center/cover no-repeat; }
-.cat-collectible { background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url('../../images/header-slide-kangaroo.jpg') center/cover no-repeat; }
-.cat-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); transition: background 0.3s; }
-.cat-banner:hover .cat-overlay { background: rgba(0,0,0,0.15); }
+.cat-gold { background: url('../images/banners/gold-lowpoly-soft.svg') center/cover no-repeat; }
+.cat-silver { background: url('../images/banners/silver-lowpoly-soft.svg') center/cover no-repeat; }
+.cat-collectible { background: url('../images/banners/bronze-lowpoly-soft.svg') center/cover no-repeat; }
+.cat-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0.05) 100%); transition: background 0.3s; }
+.cat-banner:hover .cat-overlay { background: radial-gradient(ellipse at center, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.1) 55%, rgba(0,0,0,0.02) 100%); }
 .cat-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
 .cat-content h3 { color: #fff; font-family: 'Noto Serif KR', serif; font-size: 28px; font-weight: 600; letter-spacing: 2px; }
 .cat-btn { display: inline-block; background: transparent; border: 1px solid #fff; color: #fff; padding: 8px 24px; font-size: 13px; letter-spacing: 1px; transition: all 0.3s; }
