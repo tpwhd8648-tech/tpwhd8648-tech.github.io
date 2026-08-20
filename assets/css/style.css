@@ -91,7 +91,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== CATEGORY BANNERS ===== */
 .category-banners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 40px 12px 0; background: #fff; }
-.cat-banner { position: relative; height: 280px; overflow: hidden; cursor: pointer; }
+.cat-banner { position: relative; height: 220px; overflow: hidden; cursor: pointer; }
 .cat-gold { background: url('../images/banners/gold-lowpoly-soft.svg') center/cover no-repeat; }
 .cat-silver { background: url('../images/banners/silver-lowpoly-soft.svg') center/cover no-repeat; }
 .cat-collectible { background: url('../images/banners/bronze-lowpoly-soft.svg') center/cover no-repeat; }
@@ -280,7 +280,7 @@ img { max-width: 100%; display: block; }
   .hamburger { display: flex; }
   .header-icons { margin-left: auto; }
   .category-banners { grid-template-columns: 1fr; }
-  .cat-banner { height: 180px; }
+  .cat-banner { height: 150px; }
   .hero-slider { height: 400px; }
   .slide-title { font-size: 24px; }
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
