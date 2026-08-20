@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<defs><linearGradient id="grad-bokeh2-bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#7A5240"/>
+  <stop offset="50%" stop-color="#B07C58"/>
+  <stop offset="100%" stop-color="#D9AE86"/>
+</linearGradient><filter id="blur-bokeh2-bronze" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter></defs>
+<rect width="400" height="300" fill="url(#grad-bokeh2-bronze)"/>
+<g filter="url(#blur-bokeh2-bronze)">
+<circle cx="177.5" cy="170.5" r="76.8" fill="#ffffff" fill-opacity="0.078"/>
+<circle cx="235.5" cy="107.7" r="71.5" fill="#ffffff" fill-opacity="0.098"/>
+<circle cx="80.8" cy="154.8" r="53.5" fill="#ffffff" fill-opacity="0.063"/>
+<circle cx="45.2" cy="102.8" r="45.5" fill="#ffffff" fill-opacity="0.114"/>
+<circle cx="321.5" cy="6.2" r="63.4" fill="#ffffff" fill-opacity="0.090"/>
+<circle cx="160.5" cy="21.6" r="77.9" fill="#ffffff" fill-opacity="0.081"/>
+</g>
+</svg>

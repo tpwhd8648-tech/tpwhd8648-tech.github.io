@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<defs><linearGradient id="grad-satin-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#8A6E3E"/>
+  <stop offset="50%" stop-color="#C9A85E"/>
+  <stop offset="100%" stop-color="#E8CD94"/>
+</linearGradient><linearGradient id="sheen-satin-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="30%" stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="48%" stop-color="#ffffff" stop-opacity="0.22"/>
+  <stop offset="58%" stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient></defs>
+<rect width="400" height="300" fill="url(#grad-satin-gold)"/>
+<rect width="400" height="300" fill="url(#sheen-satin-gold)"/>
+</svg>
