@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<defs><linearGradient id="grad-bokeh-bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#7A5240"/>
+  <stop offset="50%" stop-color="#B07C58"/>
+  <stop offset="100%" stop-color="#D9AE86"/>
+</linearGradient><filter id="blur-bokeh-bronze" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter></defs>
+<rect width="400" height="300" fill="url(#grad-bokeh-bronze)"/>
+<g filter="url(#blur-bokeh-bronze)">
+<circle cx="57.8" cy="110.8" r="19.6" fill="#ffffff" fill-opacity="0.109"/>
+<circle cx="264.1" cy="64.8" r="46.6" fill="#ffffff" fill-opacity="0.182"/>
+<circle cx="5.8" cy="260.1" r="35.5" fill="#ffffff" fill-opacity="0.083"/>
+<circle cx="154.8" cy="111.2" r="38.7" fill="#ffffff" fill-opacity="0.162"/>
+<circle cx="355.0" cy="237.3" r="43.7" fill="#ffffff" fill-opacity="0.187"/>
+<circle cx="143.4" cy="45.4" r="34.4" fill="#ffffff" fill-opacity="0.118"/>
+<circle cx="231.1" cy="281.7" r="40.5" fill="#ffffff" fill-opacity="0.136"/>
+<circle cx="387.8" cy="184.7" r="51.6" fill="#ffffff" fill-opacity="0.176"/>
+<circle cx="349.5" cy="224.0" r="21.3" fill="#ffffff" fill-opacity="0.218"/>
+<circle cx="351.1" cy="171.5" r="50.8" fill="#ffffff" fill-opacity="0.186"/>
+<circle cx="379.8" cy="111.3" r="23.8" fill="#ffffff" fill-opacity="0.215"/>
+<circle cx="334.5" cy="63.1" r="25.1" fill="#ffffff" fill-opacity="0.195"/>
+</g>
+</svg>
