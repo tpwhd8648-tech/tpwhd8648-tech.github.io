@@ -90,7 +90,7 @@ img { max-width: 100%; display: block; }
 .dot.active { background: var(--gold); }
 
 /* ===== CATEGORY BANNERS ===== */
-.category-banners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.category-banners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 40px 12px 0; background: #fff; }
 .cat-banner { position: relative; height: 280px; overflow: hidden; cursor: pointer; }
 .cat-gold { background: url('../images/banners/gold-lowpoly-soft.svg') center/cover no-repeat; }
 .cat-silver { background: url('../images/banners/silver-lowpoly-soft.svg') center/cover no-repeat; }
