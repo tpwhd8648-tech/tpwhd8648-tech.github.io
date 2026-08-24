@@ -473,9 +473,12 @@
        당분간 둘 다 유지, 필요시 정리).
 
        ⚠️ 텍스트 동기화 필요: 이 블록과 완전히 동일한 카드 문구(제목 4개 +
-       본문, 스텝 3개 + 본문)가 아래 위치에도 각각 복사돼 있음. 문구를 수정할
-       때는 두 곳 모두 함께 고칠 것 (자동 동기화 없음, 수동 반영):
+       본문, 스텝 3개 + 본문)가 아래 위치에도 복사돼 있음. 문구를 수정할
+       때는 함께 고칠 것 (자동 동기화 없음, 수동 반영):
          - /pages/about.html의 <div class="why-section"> 블록
+       (/pages/coins.html에도 같은 섹션이 있으나(2026-08-24 세션에 3번째로
+       추가), 사용자 요청으로 카드 4개 문구만 더 짧게 축약해 별도 관리 중 —
+       coins.html은 이 동기화 대상에서 제외. 스텝 3개는 coins.html도 동일.)
        (CSS는 style.css의 .why-steps-section/.why-grid/.why-card/.steps-grid/
        .step-card 등에 두 페이지 공용으로 정의돼 있어 스타일 수정은 style.css
        한 곳만 고치면 됨 — 단 about.html은 자체 inline <style>에도 같은 클래스가

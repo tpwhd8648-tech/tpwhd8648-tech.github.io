@@ -477,6 +477,74 @@
     </div>
   </section>
 
+  <!-- "왜 원트로이 불리온인가 / 이용 방법" 섹션 (2026-08-24 세션, 3번째
+       배치 페이지). 상품 목록을 다 훑어본 방문자에게 신뢰를 다지고
+       바로 아래 카카오톡 문의로 유도하는 목적.
+
+       ⚠️ 이 페이지만 카드 문구가 다름(사용자 요청으로 단순화): index.html/
+       about.html은 카드 4개 문구가 서로 완전히 동일하지만, 이 coins.html
+       버전은 더 짧게 축약된 별도 문구를 씀(예: "간편한 문의" 카드에서
+       "복잡한 회원가입 없습니다" 문구 삭제 등). 즉 세 페이지가 더 이상
+       텍스트 동기화 대상이 아님 — 이 블록 문구를 고칠 때 index.html/
+       about.html을 따라 고칠 필요 없음(반대도 마찬가지). 스텝(이용 방법)
+       섹션 3개는 세 페이지 모두 동일하게 유지.
+
+       (CSS는 style.css의 .why-steps-section/.why-grid/.why-card/.steps-grid/
+       .step-card 등에 공용으로 정의돼 있어 스타일 수정은 style.css 한 곳만
+       고치면 됨. coins.html은 SSG_GRID 마커 영역만 야간 자동 재생성되므로,
+       이 블록은 마커 밖(</section> 다음, footer 이전)에 있어 자동 재생성에
+       영향받지 않음.) -->
+  <section class="why-steps-section">
+    <div class="container">
+      <div class="why-section">
+        <h3>왜 원트로이 불리온인가</h3>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-card-icon">💰</div>
+            <h4>합리적인 가격</h4>
+            <p>실시간 국제 금 시세 기준으로 투명하게 가격을 책정합니다. 항상 국내 최저가를 지향합니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">💬</div>
+            <h4>간편한 문의</h4>
+            <p>카카오톡으로 24시간 문의.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">🤝</div>
+            <h4>직접 확인 후 거래</h4>
+            <p>원하시는 장소에서 실물을 직접 확인하고 안전하게 거래합니다. 선입금의 불안감이나 위험이 없습니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">🏅</div>
+            <h4>정품만 취급</h4>
+            <p>세계 각국의 공인 조폐국 정품만 판매합니다. 아메리칸이글, 브리타니아, 메이플리프 등 취급합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-section">
+        <h3>쉽고 빠르게 이용해 보세요</h3>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h4>카카오톡 문의</h4>
+            <p>원하시는 코인과 수량을 카카오톡으로 문의해 주세요.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h4>가격·장소 협의</h4>
+            <p>실시간 시세로 가격을 안내드리고, 거래 장소·시간을 조율합니다.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h4>만나서 거래</h4>
+            <p>약속한 장소에서 실물 확인 후 거래를 완료합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer id="site-footer"></footer>
 
   <!-- 장바구니 사이드바: 사용자 결정으로 제거함. 담기 버튼이 사이트
