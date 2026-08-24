@@ -73,6 +73,24 @@
     .about-cta p { font-family: 'Noto Sans KR', sans-serif; font-size: 14px; color: #555; margin-bottom: 14px; }
     .about-cta a { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: #1a1a1a; color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: 0.5px; transition: opacity 0.2s; }
     .about-cta a:hover { opacity: 0.85; }
+
+    /* 왜 원트로이 불리온인가 / 이용 방법 섹션 (2026-08-24 신설, WOWPASS 참고) */
+    .why-section, .steps-section { margin-bottom: 20px; }
+    .why-section h3, .steps-section h3 { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 600; color: #1a1a1a; text-align: center; margin: 0 0 24px; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .why-card { background: #fff; border: 1px solid #e8e3d8; padding: 24px 20px; text-align: center; }
+    .why-card-icon { font-size: 30px; margin-bottom: 12px; }
+    .why-card h4 { font-family: 'Noto Sans KR', sans-serif; font-size: 15px; font-weight: 600; color: #1a1a1a; margin: 0 0 8px; }
+    .why-card p { font-family: 'Noto Sans KR', sans-serif; font-size: 13px; color: #666; line-height: 1.7; margin: 0; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step-card { background: #fff; border: 1px solid #e8e3d8; padding: 24px 18px; text-align: center; position: relative; }
+    .step-num { display: inline-block; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; color: #C8A84B; margin-bottom: 8px; }
+    .step-card h4 { font-family: 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 600; color: #1a1a1a; margin: 0 0 8px; }
+    .step-card p { font-family: 'Noto Sans KR', sans-serif; font-size: 12px; color: #666; line-height: 1.6; margin: 0; }
+    @media (max-width: 600px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -111,6 +129,59 @@
         <p>상호: 골든민트(ONETROY BULLION) | 대표: 정세종<br>
         사업자등록번호: 898-26-02365<br>
         주소: 서울특별시 종로구 봉익동 136 | 전화: 010-3737-5757</p>
+      </div>
+
+      <!-- "왜 원트로이 불리온인가" / "이용 방법" 섹션 (2026-08-24 신설).
+           WOWPASS 카드형 안내 디자인을 참고하되, 문구는 실제 사실에 맞게 재작성함
+           (예: 금융감독원 인가·보증보험 등 환전업 관련 문구는 귀금속 매장에
+           해당하지 않아 사용하지 않음). 노출 위치 테스트 목적으로 우선 about.html
+           (가장 노출이 적은 페이지)에 배치 — 사용자가 반응 보고 index.html
+           이전 여부 판단 예정. -->
+      <div class="why-section">
+        <h3>왜 원트로이 불리온인가</h3>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-card-icon">💰</div>
+            <h4>합리적인 가격</h4>
+            <p>실시간 국제 금 시세 기준으로 투명하게 가격을 책정합니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">💬</div>
+            <h4>간편한 문의</h4>
+            <p>카카오톡 1클릭으로 바로 문의, 복잡한 회원가입 없습니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">🤝</div>
+            <h4>직접 확인 후 거래</h4>
+            <p>원하시는 장소에서 실물을 직접 확인하고 안전하게 거래합니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">🏅</div>
+            <h4>정품만 취급</h4>
+            <p>아메리칸이글, 버팔로, 메이플리프 등 공인 조폐국 정품만 판매합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-section">
+        <h3>쉽고 빠르게 이용해 보세요</h3>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h4>카카오톡 문의</h4>
+            <p>원하시는 코인과 수량을 카카오톡으로 문의해 주세요.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h4>가격·장소 협의</h4>
+            <p>실시간 시세로 가격을 안내드리고, 거래 장소·시간을 조율합니다.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h4>만나서 거래</h4>
+            <p>약속한 장소에서 실물 확인 후 거래를 완료합니다.</p>
+          </div>
+        </div>
       </div>
 
       <div class="about-cta">
