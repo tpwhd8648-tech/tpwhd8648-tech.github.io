@@ -470,7 +470,16 @@
        브랜드 섹션과 푸터 사이(맨 아래)에 배치 — 페이지를 끝까지 본 방문자에게
        신뢰를 다지고 바로 아래 카카오톡 플로팅 버튼으로 자연스럽게 유도하는
        목적. about.html 버전과 문구 동일하게 유지(중복이지만 반응 비교 목적으로
-       당분간 둘 다 유지, 필요시 정리). -->
+       당분간 둘 다 유지, 필요시 정리).
+
+       ⚠️ 텍스트 동기화 필요: 이 블록과 완전히 동일한 카드 문구(제목 4개 +
+       본문, 스텝 3개 + 본문)가 아래 위치에도 각각 복사돼 있음. 문구를 수정할
+       때는 두 곳 모두 함께 고칠 것 (자동 동기화 없음, 수동 반영):
+         - /pages/about.html의 <div class="why-section"> 블록
+       (CSS는 style.css의 .why-steps-section/.why-grid/.why-card/.steps-grid/
+       .step-card 등에 두 페이지 공용으로 정의돼 있어 스타일 수정은 style.css
+       한 곳만 고치면 됨 — 단 about.html은 자체 inline <style>에도 같은 클래스가
+       중복 정의돼 있으니, 스타일까지 바꿀 경우 그쪽도 확인할 것.) -->
   <section class="why-steps-section">
     <div class="container">
       <div class="why-section">
