@@ -76,25 +76,44 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <!-- 사업자등록번호 확정 반영 (2026-07-22).
-           현재 사업자등록증 상 실제 상호는 "골든민트"이며, "OneTroy Bullion"은
-           브랜드명으로 병기 표시함 (전자상거래법상 표시 상호는 사업자등록증
-           기재 상호와 일치해야 하므로 실제 상호를 먼저 명시).
-           상호 변경(골든민트 → 원트로이불리온) 신고 완료 시, 아래 줄에서
-           "골든민트(" 와 뒤의 ")" 를 제거해 "ONETROY BULLION"만 남길 것. -->
-      <!-- 대표자명·주소·전화번호 확정 반영 (2026-07-22), 표기 방식 변경(후속).
+      <!-- 상호 표기 (2026-08-24 변경): 상호 변경(골든민트 → 원트로이불리온) 신고가
+           아직 완료되지 않아 법적 표시 상호(골든민트)는 유지하되, 화면 노출 순서를
+           "원트로이 불리온" 우선으로 변경 — 사용자 요청(2026-08-24). 신고 완료 시
+           괄호 안 "골든민트" 표기를 제거할 것(이전과 동일한 원칙, 순서만 반전됨). -->
+      <p>© 2026 원트로이 불리온(ONETROY BULLION / 등록상호: 골든민트) 귀금속 전문점</p>
+      <p class="footer-legal-toggle-wrap">
+        <button type="button" class="footer-legal-toggle" id="footer-legal-toggle" aria-expanded="false" aria-controls="footer-legal-details">
+          사업자 정보 보기 <span class="footer-legal-arrow">▾</span>
+        </button>
+      </p>
+      <!-- 대표자명·사업자등록번호·주소·전화번호: 아코디언으로 전환(2026-08-24,
+           사용자 요청). 상호/저작권 문구만 항상 노출, 나머지는 클릭 시 펼침.
            주소는 정식 주소 확정 전까지 종로3가역 인근 랜드마크 건물(대림빌딩,
            봉익동 136 — 사용자가 지도 앱에서 직접 확인한 지번주소, 도로명주소는
            미확인)로 표기함 — 화면 노출 텍스트에는 "임시"/"인근" 표현과 건물명은
-           넣지 않고 주소만 표기(2026-07-30: 종로 183 → 봉익동 136으로 교체), 실제
-           사업장 주소는 아니므로 정식 주소 확정 시 사용자가 직접 교체 예정.
-           통신판매업신고번호는 아직 신청 전이라 미기재 — 신고 완료 후
-           "사업자등록번호: 898-26-02365" 뒤에 이어서 추가할 것. -->
-      <p>© 2026 골든민트(ONETROY BULLION / 원트로이 불리온) 귀금속 전문점 | 대표: 정세종</p>
-      <p>사업자등록번호: 898-26-02365 | 서울특별시 종로구 봉익동 136 | 전화: 010-3737-5757</p>
+           넣지 않고 주소만 표기, 실제 사업장 주소는 아니므로 정식 주소 확정 시
+           사용자가 직접 교체 예정. 통신판매업신고번호는 아직 신청 전이라 미기재
+           — 신고 완료 후 "사업자등록번호: 898-26-02365" 뒤에 이어서 추가할 것. -->
+      <div class="footer-legal-details" id="footer-legal-details" hidden>
+        <p>대표: 정세종</p>
+        <p>사업자등록번호: 898-26-02365</p>
+        <p>서울특별시 종로구 봉익동 136</p>
+        <p>전화: 010-3737-5757</p>
+      </div>
       <p>귀금속은 투자 위험이 있습니다. 투자 전 충분한 검토를 권장합니다.</p>
     </div>
   `;
+
+  const toggleBtn = document.getElementById('footer-legal-toggle');
+  const details = document.getElementById('footer-legal-details');
+  if (toggleBtn && details) {
+    toggleBtn.addEventListener('click', function () {
+      const isOpen = !details.hidden;
+      details.hidden = isOpen;
+      toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+      toggleBtn.classList.toggle('is-open', !isOpen);
+    });
+  }
 })();
 
 // ===== 카카오 플로팅 버튼 (모든 페이지 공통) =====
