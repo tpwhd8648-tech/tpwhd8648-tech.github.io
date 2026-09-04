@@ -176,9 +176,11 @@
           ? `<video class="slide-video-bg" autoplay muted loop playsinline preload="auto" poster="${s.image || ''}"><source src="${s.video}" type="video/mp4"></video><div class="slide-video-overlay"></div>`
           : '';
         let cycleBg = '';
+        let slideDurationMs = 5000; // 기본 노출 시간(ms) — script.js의 자동전환 타이머가 이 값을 읽음
         if (s.images && s.images.length) {
           const n = s.images.length;
           const duration = n * CYCLE_SEC;
+          slideDurationMs = duration * 1000; // 이미지 여러 장을 다 보여줄 때까지 자동전환 지연
           const onPct = 100 / n;
           const fadePct = Math.min(2, onPct / 4);
           const kfName = `heroBgCycle${i}`;
@@ -202,7 +204,7 @@
           ? `<p class="slide-subtitle">${s.subtitle}</p>`
           : '';
         return `
-      <div class="${slideClass}"${bgStyle}>
+      <div class="${slideClass}"${bgStyle} data-duration="${slideDurationMs}">
         ${videoBg}
         ${cycleBg}
         <div class="slide-content">

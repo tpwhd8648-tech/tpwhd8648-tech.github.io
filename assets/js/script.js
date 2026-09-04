@@ -23,16 +23,51 @@ function initHeroSlider() {
     dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
   }
 
+  // 슬라이드별 노출 시간이 다를 수 있음(예: 이미지 여러 장을 순환하는 슬라이드는
+  // 그 장수만큼 더 오래 보여줘야 함). 각 .slide의 data-duration(ms, index.html에서
+  // 렌더링 시 부여)을 읽어 그 시간만큼 대기한 뒤 다음 슬라이드로 넘어가도록
+  // setInterval 대신 setTimeout을 슬라이드마다 다시 예약하는 방식으로 변경.
+  let autoSlideTimer = null;
+  let autoSlidePaused = false;
+
+  function getCurrentSlideDuration() {
+    const el = slides[currentSlide];
+    const d = el && parseInt(el.dataset.duration, 10);
+    return d > 0 ? d : 5000;
+  }
+
+  function scheduleAutoSlide() {
+    clearTimeout(autoSlideTimer);
+    if (autoSlidePaused) return;
+    autoSlideTimer = setTimeout(() => {
+      goToSlide(currentSlide + 1);
+      scheduleAutoSlide();
+    }, getCurrentSlideDuration());
+  }
+
+  // 수동 조작(화살표/도트/스와이프) 시에도 새 슬라이드 기준으로 타이머를
+  // 다시 예약해서, 막 넘긴 슬라이드가 남은 시간만큼만 짧게 보이다 바로
+  // 다음으로 넘어가는 어색함을 방지한다.
+  function goToSlideManual(n) {
+    goToSlide(n);
+    scheduleAutoSlide();
+  }
+
   const prevBtn = document.getElementById('slider-prev');
   const nextBtn = document.getElementById('slider-next');
-  if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
-  dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
+  if (prevBtn) prevBtn.addEventListener('click', () => goToSlideManual(currentSlide - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goToSlideManual(currentSlide + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlideManual(i)));
 
-  let autoSlide = setInterval(() => goToSlide(currentSlide + 1), 5000);
-  heroSlider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  scheduleAutoSlide();
+
+  heroSlider.addEventListener('mouseenter', () => {
+    autoSlidePaused = true;
+    clearTimeout(autoSlideTimer);
+  });
   heroSlider.addEventListener('mouseleave', () => {
-    autoSlide = setInterval(() => goToSlide(currentSlide + 1), 5000);
+    autoSlidePaused = false;
+    scheduleAutoSlide();
   });
 
   let touchStartX = 0;
@@ -41,7 +76,7 @@ function initHeroSlider() {
   });
   heroSlider.addEventListener('touchend', e => {
     const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+    if (Math.abs(diff) > 50) goToSlideManual(diff > 0 ? currentSlide + 1 : currentSlide - 1);
   });
 }
 
