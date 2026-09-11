@@ -216,7 +216,7 @@
           ? `<p class="slide-subtitle">${s.subtitle}</p>`
           : '';
         return `
-      <div class="${slideClass}"${bgStyle} data-duration="${slideDurationMs}">
+      <div class="${slideClass}"${bgStyle} data-duration="${slideDurationMs}" data-slug="${s.slug || ''}">
         ${videoBg}
         ${cycleBg}
         <div class="slide-content">

@@ -327,6 +327,10 @@ img { max-width: 100%; display: block; }
   .cat-coin-img { width: 155px; height: 155px; }
   .hero-slider { height: 400px; }
   .slide-title { font-size: 24px; }
+  /* 2027 양띠 슬라이드: 모바일에서 코인이 크게 잘려 보이는 문제 보정
+     (원본 배경 이미지가 가로로 매우 길어 좁은 화면에서 cover 크롭 시
+     코인이 과도하게 확대/우측 크롭됨) */
+  .slide[data-slug="goat-2027"] { background-size: 150% auto !important; background-position: 89% center !important; }
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .product-info { padding: 10px; }
   .product-name { font-size: 13px; }
