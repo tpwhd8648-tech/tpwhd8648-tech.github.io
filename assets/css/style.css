@@ -327,12 +327,9 @@ img { max-width: 100%; display: block; }
   .cat-coin-img { width: 155px; height: 155px; }
   .hero-slider { height: 400px; }
   .slide-title { font-size: 24px; }
-  /* 2027 양띠 슬라이드: 원본 배경 이미지가 가로로 매우 길어(1869x474)
-     모바일에서 기본 위치(center)로는 코인이 어중간하게 잘려 보여
-     position만 89%로 보정. size는 background-size:150% auto 등으로
-     cover보다 작게 잡으면 이 이미지 비율상 세로 여백(검은 배경 #111 노출)이
-     생기므로 반드시 cover 이상 유지할 것 (2026-09-11 여백 버그 수정) */
-  .slide[data-slug="goat-2027"] { background-size: cover !important; background-position: 89% center !important; }
+  /* 2026-09-11: goat-2027 코인을 이미지 정중앙 부근(다른 슬라이드와 동일한
+     배치 방식)으로 재합성하면서 모바일 전용 오버라이드가 더 이상 필요 없어짐.
+     기본 center/cover만으로 다른 슬라이드와 동일하게 동작함. */
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .product-info { padding: 10px; }
   .product-name { font-size: 13px; }
