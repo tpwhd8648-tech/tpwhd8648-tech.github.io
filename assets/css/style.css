@@ -317,12 +317,6 @@ img { max-width: 100%; display: block; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-locations { grid-column: 1 / -1; }
 }
-/* 2026-09-11: 태블릿 구간(769px~1024px)에서 goat-2027 슬라이드만 코인을
-   기본(center)보다 아주 살짝 오른쪽으로 이동. 텍스트(.slide-content) 위치는
-   변경하지 않음 — 다른 슬라이드와 동일하게 좌측 유지. */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .slide[data-slug="goat-2027"] { background-position: 58% center !important; }
-}
 @media (max-width: 768px) {
   .header-search { display: none; }
   .nav-list { display: none; }
@@ -333,20 +327,9 @@ img { max-width: 100%; display: block; }
   .cat-coin-img { width: 155px; height: 155px; }
   .hero-slider { height: 400px; }
   .slide-title { font-size: 24px; }
-  /* 2026-09-11: goat-2027 모바일 전용 레이아웃 — 텍스트를 상단으로,
-     코인 이미지를 하단으로 분리해 겹침 방지. 이미지를 contain으로 축소해
-     하단에 붙이고, 남는 위쪽 공간은 배경색(다크 톤)으로 채움. 다른 4개
-     슬라이드는 기존 center/cover 그대로 유지. */
-  .slide[data-slug="goat-2027"] {
-    align-items: flex-start !important;
-    background-color: #1a0f0a !important;
-    background-position: center, center bottom !important;
-    background-size: cover, contain !important;
-    background-repeat: no-repeat, no-repeat !important;
-  }
-  .slide[data-slug="goat-2027"] .slide-content {
-    padding-top: 32px;
-  }
+  /* 2026-09-11: goat-2027 코인을 이미지 정중앙 부근(다른 슬라이드와 동일한
+     배치 방식)으로 재합성하면서 모바일 전용 오버라이드가 더 이상 필요 없어짐.
+     기본 center/cover만으로 다른 슬라이드와 동일하게 동작함. */
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .product-info { padding: 10px; }
   .product-name { font-size: 13px; }
