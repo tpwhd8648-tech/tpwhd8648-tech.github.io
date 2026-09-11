@@ -168,12 +168,24 @@ img { max-width: 100%; display: block; }
   border: none;
 }
 .badge-instock {
-  background: #d4ae3a;
+  background: linear-gradient(120deg, #d4ae3a, #e8c968, #d4ae3a);
+  background-size: 220% 100%;
   color: #4a2e00;
+  animation: badge-instock-glow 3.5s ease-in-out infinite;
 }
 .badge-presale {
   background: #d4bc70;
   color: #6a5010;
+}
+
+@keyframes badge-instock-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-instock { animation: none; background: #d4ae3a; }
 }
 
 .product-info {
