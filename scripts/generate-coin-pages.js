@@ -27,7 +27,7 @@ const vm = require('vm');
 
 const ROOT = path.join(__dirname, '..');
 const SHEET_ID = '1gMqKhtWwTAizoBGlrGDpm6sl5c6vmbotGzg3qXl16-w';
-const SITE_URL = 'https://tpwhd8648-tech.github.io';
+const SITE_URL = 'https://onetroy.co.kr';
 
 // ── 1. coin-descriptions.js / products.js를 "수정 없이" 그대로 읽어서
 //      안에 정의된 const 값만 꺼내온다 (module.exports 없이도 동작) ──
@@ -152,7 +152,7 @@ function escapeAttr(str) {
 function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
   const { slug, name, brand, detail, specs, imageFile, keywords, premium, available } = coin;
   const baseImg = imageFile.replace(/\.png$/i, '');
-  const pageUrl = `${SITE_URL}/coins/coin-${slug}.html`;
+  const pageUrl = `${SITE_URL}/coins/coin-${slug}`;
   const mainImgUrl = `${SITE_URL}/images/${imageFile}`;
   const safeName = escapeHtml(name);
   const safeNameAttr = escapeAttr(name);
@@ -203,7 +203,7 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: '홈으로', item: `${SITE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: '금화 보기', item: `${SITE_URL}/pages/coins.html` },
+      { '@type': 'ListItem', position: 2, name: '금화 보기', item: `${SITE_URL}/pages/coins` },
       { '@type': 'ListItem', position: 3, name: name, item: pageUrl },
     ],
   };
@@ -918,7 +918,7 @@ function renderRelatedCoins(currentSlug, allEntries, sheetRows) {
   if (related.length === 0) return '';
 
   const cards = related.map(({ entry, row }) => {
-    const linkUrl = `coin-${entry.slug}.html`;
+    const linkUrl = `coin-${entry.slug}`;
     const imgSrc = `../images/${entry.imageFile}`;
     const isCurrent = entry.slug === currentSlug;
     return `
@@ -947,7 +947,7 @@ function renderRelatedCoins(currentSlug, allEntries, sheetRows) {
         <div class="related-coins-section">
           <div class="related-coins-header">
             <h2 class="related-coins-title">당일수령 가능 금화</h2>
-            <a href="../pages/coins.html?instock" class="related-coins-more">당일수령 더보기 ›</a>
+            <a href="../pages/coins?instock" class="related-coins-more">당일수령 더보기 ›</a>
           </div>
           <div class="related-coins-grid">
             ${cards}
@@ -966,7 +966,7 @@ function renderIndexGrid(sheetRows) {
 
   return products.map(p => {
     const slug = getSlugFromImageMap(p.name);
-    const linkUrl = slug ? `coins/coin-${slug}.html` : `coin-detail.html?name=${encodeURIComponent(p.name)}`;
+    const linkUrl = slug ? `coins/coin-${slug}` : `coin-detail?name=${encodeURIComponent(p.name)}`;
     return renderProductCard(p, linkUrl, {});
   }).join('\n');
 }
@@ -982,7 +982,7 @@ function renderCoinsGrid(sheetRows) {
 
   return products.map(p => {
     const slug = getSlugFromImageMap(p.name);
-    const linkUrl = slug ? `../coins/coin-${slug}.html` : `../coin-detail.html?name=${encodeURIComponent(p.name)}`;
+    const linkUrl = slug ? `../coins/coin-${slug}` : `../coin-detail?name=${encodeURIComponent(p.name)}`;
     return renderProductCard(p, linkUrl, { soldoutBtnText: '상품 보기', pathPrefix: '../' });
   }).join('\n');
 }
@@ -1004,14 +1004,14 @@ function injectGrid(html, gridHtml) {
 function renderSitemap(coinEntries, todayStr) {
   const fixedUrls = [
     { loc: `${SITE_URL}/`, changefreq: 'daily', priority: '1.0' },
-    { loc: `${SITE_URL}/pages/coins.html`, changefreq: 'daily', priority: '0.8' },
-    { loc: `${SITE_URL}/pages/gold-price.html`, changefreq: 'daily', priority: '0.8' },
-    { loc: `${SITE_URL}/pages/contact.html`, changefreq: 'monthly', priority: '0.5' },
-    { loc: `${SITE_URL}/pages/faq.html`, changefreq: 'monthly', priority: '0.6' },
-    { loc: `${SITE_URL}/pages/about.html`, changefreq: 'monthly', priority: '0.6' },
+    { loc: `${SITE_URL}/pages/coins`, changefreq: 'daily', priority: '0.8' },
+    { loc: `${SITE_URL}/pages/gold-price`, changefreq: 'daily', priority: '0.8' },
+    { loc: `${SITE_URL}/pages/contact`, changefreq: 'monthly', priority: '0.5' },
+    { loc: `${SITE_URL}/pages/faq`, changefreq: 'monthly', priority: '0.6' },
+    { loc: `${SITE_URL}/pages/about`, changefreq: 'monthly', priority: '0.6' },
   ];
   const coinUrls = coinEntries.map(c => ({
-    loc: `${SITE_URL}/coins/coin-${c.slug}.html`,
+    loc: `${SITE_URL}/coins/coin-${c.slug}`,
     changefreq: 'daily',
     priority: '0.7',
   }));

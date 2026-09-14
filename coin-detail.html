@@ -21,15 +21,15 @@
   <title>OneTroy Bullion | 코인 상세정보 - 중량·순도·실시간 시세</title>
   <meta name="description" content="코인별 중량, 순도, 발행처, 실시간 국제 시세 등 상세 정보를 확인하고 안전하게 구매하세요. OneTroy Bullion이 정품을 보증합니다.">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://tpwhd8648-tech.github.io/coin-detail.html">
+  <link rel="canonical" href="https://onetroy.co.kr/coin-detail">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tpwhd8648-tech.github.io/coin-detail.html">
+  <meta property="og:url" content="https://onetroy.co.kr/coin-detail">
   <meta property="og:title" content="OneTroy Bullion | 코인 상세정보">
   <meta property="og:description" content="코인별 중량, 순도, 발행처, 실시간 국제 시세 등 상세 정보를 확인하고 안전하게 구매하세요.">
-  <meta property="og:image" content="https://tpwhd8648-tech.github.io/images/products/2026/maple.png">
+  <meta property="og:image" content="https://onetroy.co.kr/images/products/2026/maple.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="1200">
   <meta property="og:image:alt" content="OneTroy Bullion 귀금속 쇼핑몰">
@@ -39,7 +39,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OneTroy Bullion | 코인 상세정보">
   <meta name="twitter:description" content="코인별 중량, 순도, 발행처, 실시간 국제 시세 등 상세 정보를 확인하고 안전하게 구매하세요.">
-  <meta name="twitter:image" content="https://tpwhd8648-tech.github.io/images/products/2026/maple.png">
+  <meta name="twitter:image" content="https://onetroy.co.kr/images/products/2026/maple.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
@@ -180,7 +180,7 @@
       <div class="page-header">
         <a href="/">← 홈으로</a>
         <span class="divider">/</span>
-        <a href="pages/coins.html">금화 보기</a>
+        <a href="pages/coins">금화 보기</a>
         <span class="divider">/</span>
         <span class="crumb" id="breadcrumb-name">상품 상세</span>
       </div>
@@ -275,11 +275,11 @@
           '@type': 'Product',
           name: name,
           description: (detailText || '').replace(/\n/g, ' ').substring(0, 300),
-          image: `https://tpwhd8648-tech.github.io/images/${baseImg}.png`,
+          image: `https://onetroy.co.kr/images/${baseImg}.png`,
           brand: { '@type': 'Brand', name: brand || 'OneTroy Bullion' },
           offers: {
             '@type': 'Offer',
-            url: `https://tpwhd8648-tech.github.io/coin-detail.html?name=${encodeURIComponent(name)}`,
+            url: `https://onetroy.co.kr/coin-detail?name=${encodeURIComponent(name)}`,
             priceCurrency: 'KRW',
             availability: isAvailable ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
             seller: { '@type': 'Organization', name: 'OneTroy Bullion' }
@@ -463,7 +463,7 @@
             </div>
             <div>
               ${inquiryBtn}
-              <a href="pages/coins.html" class="btn-back-coins">← 목록으로 돌아가기</a>
+              <a href="pages/coins" class="btn-back-coins">← 목록으로 돌아가기</a>
             </div>
           </div>
         </div>
@@ -662,7 +662,7 @@
 
         if (!product) {
           document.getElementById('detail-content').innerHTML =
-            `<div class="error-msg"><p>상품을 찾을 수 없습니다.</p><a href="pages/coins.html" style="color:#C8A84B;">← 목록으로 돌아가기</a></div>`;
+            `<div class="error-msg"><p>상품을 찾을 수 없습니다.</p><a href="pages/coins" style="color:#C8A84B;">← 목록으로 돌아가기</a></div>`;
           return;
         }
 
@@ -684,7 +684,7 @@
       } catch (e) {
         console.error('상품 로딩 오류:', e);
         document.getElementById('detail-content').innerHTML =
-          `<div class="error-msg"><p>상품 정보를 불러오는 중 오류가 발생했습니다.</p><a href="pages/coins.html" style="color:#C8A84B;">← 목록으로 돌아가기</a></div>`;
+          `<div class="error-msg"><p>상품 정보를 불러오는 중 오류가 발생했습니다.</p><a href="pages/coins" style="color:#C8A84B;">← 목록으로 돌아가기</a></div>`;
       }
     }
 
@@ -693,7 +693,7 @@
 
     if (!productName) {
       document.getElementById('detail-content').innerHTML =
-        `<div class="error-msg"><p>상품 정보가 없습니다.</p><a href="pages/coins.html" style="color:#C8A84B;">← 목록으로 돌아가기</a></div>`;
+        `<div class="error-msg"><p>상품 정보가 없습니다.</p><a href="pages/coins" style="color:#C8A84B;">← 목록으로 돌아가기</a></div>`;
     } else {
       loadProduct(decodeURIComponent(productName));
     }

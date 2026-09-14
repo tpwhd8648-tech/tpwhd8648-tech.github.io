@@ -7,7 +7,7 @@
       <div class="footer-col">
         <h4>카탈로그</h4>
         <ul>
-          <li><a href="/pages/coins.html">› 금화</a></li>
+          <li><a href="/pages/coins">› 금화</a></li>
           <!-- 금화1~4: 실제 카테고리 없는 플레이스홀더라 삭제함 (2026-06-21).
                카테고리가 늘어나면 다시 추가. -->
         </ul>
@@ -17,7 +17,7 @@
       <div class="footer-col">
         <h4>문의 사항</h4>
         <ul>
-          <li><a href="/pages/mypage.html">› 내 계정</a></li>
+          <li><a href="/pages/mypage">› 내 계정</a></li>
           <!-- "고객센터": 사용자 요청으로 삭제함 (2026-06-21).
                "주문 내역": 연결할 실제 페이지가 없어 삭제함 (2026-06-21).
                주문내역 페이지가 생기면 다시 추가. -->
@@ -27,15 +27,15 @@
           <!-- 브랜드 소개 페이지 신설(2026-07-24)로 링크 추가 — "원트로이 불리온"
                한글 표기를 명시적으로 노출하는 페이지, 네이버 AI 브리핑 오정보
                대응 목적(핸드오프 참고). -->
-          <li><a href="/pages/about.html">› 브랜드 소개</a></li>
+          <li><a href="/pages/about">› 브랜드 소개</a></li>
           <!-- contact.html의 #contact-map 섹션이 임시 주소로 활성화됨(2026-07-22)에
                따라 앵커 링크 복원함. -->
-          <li><a href="/pages/contact.html#contact-map">› 오시는 길</a></li>
-          <li><a href="/pages/faq.html">› 자주 묻는 질문</a></li>
+          <li><a href="/pages/contact#contact-map">› 오시는 길</a></li>
+          <li><a href="/pages/faq">› 자주 묻는 질문</a></li>
           <!-- 자주 묻는 질문: pages/faq.html 신설(2026-07-23)로 링크 복원.
                기존엔 연결할 페이지가 없어 삭제됐던 항목(2026-06-21 주석 참고). -->
-          <li><a href="/pages/terms.html">› 이용약관</a></li>
-          <li><a href="/pages/privacy.html">› 개인정보처리방침</a></li>
+          <li><a href="/pages/terms">› 이용약관</a></li>
+          <li><a href="/pages/privacy">› 개인정보처리방침</a></li>
           <!-- terms.html/privacy.html: 사업자 정보 미확정 상태에서 법적
                리스크(회원가입 시 개인정보 수집 중)를 없애기 위해 임시본으로
                생성함 (2026-06-26). 사업자 등록 완료 후 실제 정보로 교체할 것.
