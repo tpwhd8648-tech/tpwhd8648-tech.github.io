@@ -145,7 +145,7 @@
     header.className = 'header';
     header.innerHTML = `
       <div class="header-inner">
-        <a href="/index.html" class="logo-wrap">
+        <a href="/" class="logo-wrap">
           <svg class="logo-symbol" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="petal1" cx="50%" cy="20%" r="70%"><stop offset="0%" stop-color="#F5E090"/><stop offset="50%" stop-color="#C8A84B"/><stop offset="100%" stop-color="#7A5C10" stop-opacity="0.7"/></radialGradient>
