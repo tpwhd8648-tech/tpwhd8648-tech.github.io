@@ -393,7 +393,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
       <div class="page-header">
         <a href="../">← 홈으로</a>
         <span class="divider">/</span>
-        <a href="../pages/coins.html">금화 보기</a>
+        <a href="../pages/coins">금화 보기</a>
         <span class="divider">/</span>
         <span class="crumb">${safeName}</span>
       </div>
@@ -430,7 +430,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
             </div>
             <div>
               <a href="https://open.kakao.com/o/sB6Gduni" target="_blank" rel="noopener noreferrer" class="btn-inquiry" id="inquiry-btn">구매 문의하기</a>
-              <a href="../pages/coins.html" class="btn-back-coins">← 목록으로 돌아가기</a>
+              <a href="../pages/coins" class="btn-back-coins">← 목록으로 돌아가기</a>
             </div>
           </div>
         </div>
