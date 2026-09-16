@@ -125,7 +125,7 @@ const COIN_DESCRIPTIONS = [
     // 발행 수량·정확 규격은 2027년 공식 발표 전까지 verified: false 유지.
     keywords: ['2027 양띠', '2027 루나양', '2027 goat', '2027 year of goat', '2027 sheep'],
     detail: `정미년(丁未年), 양의 기운이 감도는 2027년을 기념해 호주 퍼스민트가 선보이는 루나 시리즈 3의\n여덟 번째 코인입니다. 코인 표면에는 굽이친 산등성이를 배경으로, 오랜 세월을 버텨온 나무 한\n그루와 커다란 뿔을 지닌 산양의 모습이 새겨져 있습니다. 강인한 발걸음과 형형한 눈빛으로\n표현된 산양의 자태에서, 어떤 환경에도 굴하지 않는 근성과 인내를 느끼실 수 있습니다.\n퍼스민트의 루나 시리즈는 1999년부터 2010년까지 이어진 시리즈 1을 시작으로, 2008년부터\n2019년까지 시리즈 2가 발행되며 오랜 시간 수집가들의 사랑을 받아왔습니다. 2020년 쥐띠해부터는\n새로운 디자인 언어를 담은 시리즈 3이 이어지고 있으며, 매년 십이지신 동물을 주제로 한정\n수량으로 발행됩니다.`,
-    specs: { year: '2027', mint: '퍼스 민트 (Perth Mint)', country: '호주', purity: '99.99% (.9999) 순금', weight: '1oz (31.135g)', diameter: '32.60mm', condition: '미사용 (Brilliant Uncirculated)', verified: false }
+    specs: { year: '2027', mint: '퍼스 민트 (Perth Mint)', country: '호주', purity: '99.99% (.9999) 순금', weight: '1oz (31.1g)', diameter: '32.60mm', condition: '미사용 (Brilliant Uncirculated)', verified: false }
   },
 ];
 
