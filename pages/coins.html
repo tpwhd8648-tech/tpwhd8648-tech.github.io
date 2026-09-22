@@ -58,11 +58,11 @@
         <button class="ptab active" data-filter="gold">금화</button>
         <button class="ptab" data-filter="instock">당일수령</button>
         <div class="ptab-brand-wrap" id="ptab-brand-wrap">
-          <button class="ptab ptab-brand-btn" id="ptab-brand-btn" type="button">브랜드별 <span class="ptab-arrow">▾</span></button>
+          <button class="ptab ptab-dropdown-btn" id="ptab-brand-btn" type="button">브랜드별 <span class="ptab-arrow">▾</span></button>
           <div class="ptab-brand-menu" id="ptab-brand-menu"></div>
         </div>
         <div class="ptab-brand-wrap ptab-sort-wrap" id="ptab-sort-wrap">
-          <button class="ptab ptab-brand-btn" id="ptab-sort-btn" type="button">기본순 <span class="ptab-arrow">▾</span></button>
+          <button class="ptab ptab-dropdown-btn" id="ptab-sort-btn" type="button">기본순 <span class="ptab-arrow">▾</span></button>
           <div class="ptab-brand-menu" id="ptab-sort-menu">
             <button class="ptab-brand-item" data-sort="default">기본순</button>
             <button class="ptab-brand-item" data-sort="price-asc">가격 낮은순</button>
@@ -575,7 +575,7 @@
 
   <script type="module" src="../assets/js/auth.js?v=45d284a4"></script>
   <script src="../assets/js/footer.js?v=9c395d2d"></script>
-  <script src="../assets/js/nav.js?v=60a50f5b"></script>
+  <script src="../assets/js/nav.js?v=73f203e7"></script>
   <script src="../assets/js/coin-data.js?v=f353b9dc"></script>
   <script src="../assets/js/products.js?v=29126ffc"></script>
   <script>
@@ -687,7 +687,7 @@
     }
     initSortDropdown();
 
-    document.querySelectorAll('.ptab:not(.ptab-brand-btn)').forEach(tab => {
+    document.querySelectorAll('.ptab:not(.ptab-dropdown-btn)').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
@@ -736,7 +736,7 @@
         setTimeout(() => {
           btn.innerHTML = brandValue + ' <span class="ptab-arrow">▾</span>';
           btn.classList.add('active');
-          document.querySelectorAll('.ptab:not(.ptab-brand-btn)').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.ptab:not(.ptab-dropdown-btn)').forEach(t => t.classList.remove('active'));
           applyTabFilter('brand:' + brandValue);
           btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
