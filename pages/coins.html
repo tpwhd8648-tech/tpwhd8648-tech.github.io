@@ -771,13 +771,13 @@
 
     // coins.html 전용 카드 옵션: 클릭 시 coin-{slug}.html 으로 이동.
     // 슬러그 매칭 실패 시 coin-detail?name=... 으로 fallback.
-    // 가격 미로딩 시 "로딩중..." 표시, lazy 이미지 적용.
+    // 가격 미로딩 시 "로딩 중..." 표시, lazy 이미지 적용.
     const COINS_CARD_OPTIONS = {
       linkTemplate: (product) => {
         const slug = getSlugForProduct(product.name);
         return slug ? `../coins/coin-${slug}` : `../coin-detail?name=${encodeURIComponent(product.name)}`;
       },
-      loadingPriceText: '로딩중...',
+      loadingPriceText: '로딩 중...',
       lazyImage: true,
       soldoutBtnText: '상품 보기', // coins.html은 품절 상품도 "상품 보기" 버튼 노출
     };

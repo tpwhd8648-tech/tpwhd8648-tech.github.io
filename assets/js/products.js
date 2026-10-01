@@ -20,7 +20,7 @@
 //       기본값은 coins.html (상품명을 쿼리로 넘기지 않는 메인페이지 방식).
 //       (product) => string 형태로 전달.
 //   - loadingPriceText: 가격(KRW) 아직 안 불러왔을 때 표시할 텍스트.
-//       기본값 '' (메인페이지 방식). coins.html은 '로딩중...'을 넘김.
+//       기본값 '' (메인페이지 방식). coins.html은 '로딩 중...'을 넘김.
 //   - lazyImage: <img> 태그에 loading="lazy" 속성을 붙일지 여부.
 //       기본값 false (메인페이지 방식). coins.html은 true를 넘김.
 //   - visibleValues: 구글 시트 visible 컬럼에서 이 페이지에 보여줄 값들.
