@@ -299,18 +299,22 @@
         </div>
       </div>
 
-      <!-- 정식 주소 확정 반영(2026-10-16): 경기도 고양시 덕양구 꽃마을로 46. 주소 텍스트·iframe src 교체. -->
+      <!-- 정식 주소 확정 반영(2026-10-16): 경기도 고양시 덕양구 꽃마을로 46. 지도는 구글 임베드 대신 OpenStreetMap(좌표 37.601394, 126.892178 고정) + 네이버/카카오 길찾기 버튼으로 교체(2026-10-16): 구글 임베드가 핀을 엉뚱한 위치에 찍고 인근 상호(담영네트웍스)가 노출되는 문제 때문. -->
       <div id="contact-map" style="margin-top:60px; scroll-margin-top:130px;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
           <div style="width:3px;height:24px;background:#C8A84B;"></div>
           <h3 style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:#1a1a1a;">LOCATION</h3>
-          <span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#aaa;margin-left:4px;">경기도 고양시 덕양구 꽃마을로 46, 스타비즈 5st</span>
+          <span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#aaa;margin-left:4px;">경기도 고양시 덕양구 꽃마을로 46, DMC스타비즈 5st</span>
         </div>
         <div style="width:100%;height:380px;border:1px solid #e8e3d8;overflow:hidden;position:relative;">
           <iframe
-            src="https://www.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EB%8D%95%EC%96%91%EA%B5%AC%20%EA%BD%83%EB%A7%88%EC%9D%84%EB%A1%9C%2046&output=embed"
-            width="100%" height="100%" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            src="https://www.openstreetmap.org/export/embed.html?bbox=126.888178%2C37.598394%2C126.896178%2C37.604394&amp;layer=mapnik&amp;marker=37.601394%2C126.892178"
+            width="100%" height="100%" style="border:0;display:block;" loading="lazy" title="OneTroy Bullion 오시는 길 지도">
           </iframe>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:12px;">
+          <a href="https://map.naver.com/p/search/DMC%EC%8A%A4%ED%83%80%EB%B9%84%EC%A6%885st" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;flex:1;padding:13px;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-decoration:none;border:1px solid #C8A84B;color:#1a1a1a;background:#fff;">네이버지도로 길찾기</a>
+          <a href="https://map.kakao.com/link/to/DMC%EC%8A%A4%ED%83%80%EB%B9%84%EC%A6%88%205st,37.601394,126.892178" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;flex:1;padding:13px;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-decoration:none;border:1px solid #C8A84B;color:#1a1a1a;background:#fff;">카카오맵으로 길찾기</a>
         </div>
       </div>
 
