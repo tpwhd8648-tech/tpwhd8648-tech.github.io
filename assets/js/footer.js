@@ -52,7 +52,7 @@
                정식 번호 확정 시 주소 뒤에 "<br>실제 전화번호" 형태로 추가할 것.
                영업시간은 매일 09:00-20:00, 카카오톡 문의는 24시간 별도 운영. -->
           <div class="location-item">
-            <strong>본점</strong>
+            <strong>OneTroy Bullion</strong>
             <p>경기도 고양시 덕양구 꽃마을로 46, 스타비즈 5st</p>
             <p>매일 09:00 - 20:00<br>카카오톡 문의 24시간 가능</p>
           </div>
