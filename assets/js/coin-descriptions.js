@@ -30,6 +30,11 @@ const COIN_DESCRIPTIONS = [
     specs: { year: '2026', mint: '영국 왕립 조폐국 (The Royal Mint)', country: '영국', purity: '99.99% (.9999) 순금', weight: '1oz (31.1g)', diameter: '32.69mm', thickness: '2.30mm', condition: '미사용 (Brilliant Uncirculated)', verified: true }
   },
   {
+    keywords: ['2027 브리타니아', '2027 britannia'],
+    detail: `영국 왕립 조폐국(The Royal Mint)이 1987년부터 발행하는 대표 골드 불리온 코인입니다.\n2013년부터 순도 99.99%(.9999) 순금으로 제작되며, 영국을 상징하는 여신 '브리타니아'가\n디자인의 중심을 이룹니다. 2021년에는 트라이던트·자물쇠 잠재 이미지, 마이크로 텍스트,\n배경 애니메이션 효과 등 4가지 첨단 보안 요소가 추가되어 위변조 방지 기술이 뛰어난\n코인으로 평가받습니다. 오랜 역사와 왕실 조폐국이라는 발행 신뢰도 덕분에 유럽은 물론\n전 세계 투자자들에게 꾸준히 인기 있는 상품입니다.`,
+    specs: { year: '2027', mint: '영국 왕립 조폐국 (The Royal Mint)', country: '영국', purity: '99.99% (.9999) 순금', weight: '1oz (31.1g)', diameter: '32.69mm', thickness: '2.30mm', condition: '미사용 (Brilliant Uncirculated)', verified: true }
+  },
+  {
     keywords: ['2026 캥거루', '2026 kangaroo'],
     detail: `호주 퍼스 민트(Perth Mint)가 1986년부터 발행하는 골드 불리온 코인입니다.\n초기에는 'Australian Gold Nugget'이라는 이름으로 호주 천연금괴 도안을 사용하다가\n1989년부터 캥거루 도안으로 변경했으며, 현재의 'Australian Kangaroo'로 정식 명칭이\n바뀐 것은 2008년입니다. 순도 99.99%(.9999) 순금이며, 매년 새롭게 디자인되는 캥거루\n도안이 특징으로 컬렉터들 사이에서도 수집 가치가 높습니다. 퍼스 민트의 엄격한 품질\n관리와 정부 보증 덕분에 신뢰도가 높고, 유럽·아시아 시장에서도 활발히 거래됩니다.`,
     specs: { year: '2026', mint: '퍼스 민트 (Perth Mint)', country: '호주', purity: '99.99% (.9999) 순금', weight: '1oz (31.1g)', diameter: '32.6mm', thickness: '2.95mm', condition: '미사용 (Brilliant Uncirculated)', verified: true }

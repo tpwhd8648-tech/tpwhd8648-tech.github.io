@@ -26,6 +26,7 @@
 const IMAGE_MAP = [
   { keywords: ['2026 메이플리프', '2026 메이플 리프', '2026 메이플', '2026 maple'],         file: 'products/2026/maple.png' },
   { keywords: ['2026 브리타니아', '2026 britannia'],                   file: 'products/2026/britannia.png' },
+  { keywords: ['2027 브리타니아', '2027 britannia'],                   file: 'products/2027/britannia.png' },
   { keywords: ['2026 캥거루', '2026 kangaroo'],                        file: 'products/2026/kangaroo.png' },
   { keywords: ['2026 버팔로', '2026 buffalo'],                         file: 'products/2026/buffalo.png' },
   { keywords: ['2026 아메리칸이글', '2026 아메리칸 이글', '2026 eagle'],                             file: 'products/2026/eagle.png' },
