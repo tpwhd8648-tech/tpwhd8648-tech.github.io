@@ -365,7 +365,6 @@
           <li class="nav-item"><a href="/pages/coins?brand=1" class="nav-link${isActive('coins?brand=1')}">브랜드별</a></li>
           <li class="nav-item"><a href="/pages/coins?instock" class="nav-link${isActive('coins?instock')}">IN STOCK</a></li>
           <li class="nav-item"><a href="/pages/contact" class="nav-link${isActive('contact')}">구매 문의</a></li>
-          <li class="nav-item"><a href="/pages/faq" class="nav-link${isActive('faq')}">FAQ</a></li>
           <li class="nav-item"><a href="/pages/about" class="nav-link${isActive('about')}">브랜드 소개</a></li>
         </ul>
       </div>`;
@@ -383,7 +382,6 @@
         <li><a href="/pages/coins?brand=1">브랜드별</a></li>
         <li><a href="/pages/coins?instock">IN STOCK</a></li>
         <li><a href="/pages/contact">구매 문의</a></li>
-        <li><a href="/pages/faq">FAQ</a></li>
         <li><a href="/pages/about">브랜드 소개</a></li>
         <li><a href="#" id="mobile-auth-link" class="auth-btn-pending">로그인</a></li>
       </ul>`;

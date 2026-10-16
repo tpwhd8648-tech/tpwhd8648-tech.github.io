@@ -31,9 +31,6 @@
           <!-- contact.html의 #contact-map 섹션이 임시 주소로 활성화됨(2026-07-22)에
                따라 앵커 링크 복원함. -->
           <li><a href="/pages/contact#contact-map">› 오시는 길</a></li>
-          <li><a href="/pages/faq">› 자주 묻는 질문</a></li>
-          <!-- 자주 묻는 질문: pages/faq.html 신설(2026-07-23)로 링크 복원.
-               기존엔 연결할 페이지가 없어 삭제됐던 항목(2026-06-21 주석 참고). -->
           <li><a href="/pages/terms">› 이용약관</a></li>
           <li><a href="/pages/privacy">› 개인정보처리방침</a></li>
           <!-- terms.html/privacy.html: 사업자 정보 미확정 상태에서 법적

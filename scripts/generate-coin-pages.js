@@ -1005,7 +1005,6 @@ function renderSitemap(coinEntries, todayStr) {
     { loc: `${SITE_URL}/pages/coins`, changefreq: 'daily', priority: '0.8' },
     { loc: `${SITE_URL}/pages/gold-price`, changefreq: 'daily', priority: '0.8' },
     { loc: `${SITE_URL}/pages/contact`, changefreq: 'monthly', priority: '0.5' },
-    { loc: `${SITE_URL}/pages/faq`, changefreq: 'monthly', priority: '0.6' },
     { loc: `${SITE_URL}/pages/about`, changefreq: 'monthly', priority: '0.6' },
   ];
   const coinUrls = coinEntries.map(c => ({
