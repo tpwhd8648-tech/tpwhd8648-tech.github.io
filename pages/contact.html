@@ -290,7 +290,7 @@
         </div>
       </div>
 
-      <!-- 정식 주소 확정 반영(2026-10-16): 경기도 고양시 덕양구 꽃마을로 46. 지도는 구글 임베드 대신 OpenStreetMap(좌표 37.601394, 126.892178 고정; 2026-10-17 OpenFreeMap Liberty 스타일(MapLibre)로 교체, 8초 내 로드 실패/WebGL 불가 시 OSM iframe 폴백, 확대 13~18, 휠 확대 비활성) + 네이버/카카오 길찾기 버튼으로 교체(2026-10-16): 구글 임베드가 핀을 엉뚱한 위치에 찍고 인근 상호(담영네트웍스)가 노출되는 문제 때문. -->
+      <!-- 정식 주소 확정 반영(2026-10-16): 경기도 고양시 덕양구 꽃마을로 46. 지도는 구글 임베드 대신 OpenStreetMap(좌표 37.601394, 126.892178 고정; 2026-10-17 OpenFreeMap Liberty 스타일(MapLibre)로 교체, 8초 내 로드 실패/WebGL 불가 시 OSM iframe 폴백, 확대 10~19로 확장, 휠 확대 활성(2026-10-17 변경)) + 네이버/카카오 길찾기 버튼으로 교체(2026-10-16): 구글 임베드가 핀을 엉뚱한 위치에 찍고 인근 상호(담영네트웍스)가 노출되는 문제 때문. -->
       <div id="contact-map" style="margin-top:60px; scroll-margin-top:130px;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
           <div style="width:3px;height:24px;background:#C8A84B;"></div>
@@ -307,8 +307,7 @@
               box.innerHTML = '<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=126.881178%2C37.596394%2C126.903178%2C37.606394&amp;layer=mapnik&amp;marker=37.601394%2C126.892178" width="100%" height="100%" style="border:0;display:block;" loading="lazy" title="OneTroy Bullion 오시는 길 지도"></iframe>';
             }
             try {
-              var map = new maplibregl.Map({ container: box, style: 'https://tiles.openfreemap.org/styles/liberty', center: [LNG, LAT], zoom: 15, minZoom: 13, maxZoom: 18, attributionControl: { compact: true } });
-              map.scrollZoom.disable();
+              var map = new maplibregl.Map({ container: box, style: 'https://tiles.openfreemap.org/styles/liberty', center: [LNG, LAT], zoom: 15, minZoom: 10, maxZoom: 19, attributionControl: { compact: true } });
               map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
               var el = document.createElement('div');
               el.className = 'oc-pin';
