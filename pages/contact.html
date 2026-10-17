@@ -313,7 +313,7 @@
               el.className = 'oc-pin';
               el.innerHTML = '<i></i><span><b>OneTroy Bullion</b><br>DMC스타비즈 5st</span>';
               new maplibregl.Marker({ element: el, anchor: 'bottom-left' }).setLngLat([LNG, LAT]).addTo(map);
-              var stations = [['수색역', 126.8939472, 37.5817611], ['한국항공대역', 126.8677139, 37.603525], ['디지털미디어시티역', 126.900083, 37.577722]];
+              var stations = [['수색역', 126.8939472, 37.5817611], ['디지털미디어시티역', 126.900083, 37.577722]];
               var stEls = stations.map(function (st) {
                 var d = document.createElement('div');
                 d.className = 'oc-st';
