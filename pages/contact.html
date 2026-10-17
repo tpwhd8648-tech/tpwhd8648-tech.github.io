@@ -336,7 +336,20 @@
               map.on('load', declutter);
               map.on('moveend', declutter);
               map.on('zoomend', declutter);
-              map.on('load', function () { ok = true; });
+              map.on('load', function () {
+                ok = true;
+                // 수색비행장 텍스트/비행기 아이콘만 제거 (2026-10-17): 활주로 등 지형 면/선은 유지, 공항 symbol(라벨+아이콘) 레이어만 숨김
+                (map.getStyle().layers || []).forEach(function (l) {
+                  if (l.type !== 'symbol') return;
+                  var sl = l['source-layer'] || '';
+                  if (/aeroway|aerodrome|airport/i.test(l.id) || sl === 'aerodrome_label' || sl === 'aeroway') {
+                    map.setLayoutProperty(l.id, 'visibility', 'none');
+                  } else if (sl === 'poi') {
+                    var cond = ['all', ['!=', ['get', 'class'], 'aerodrome'], ['!=', ['get', 'subclass'], 'airport'], ['!=', ['get', 'subclass'], 'aerodrome'], ['!', ['in', '비행장', ['to-string', ['coalesce', ['get', 'name'], '']]]]];
+                    map.setFilter(l.id, l.filter ? ['all', l.filter, cond] : cond);
+                  }
+                });
+              });
               setTimeout(fallback, 8000);
             } catch (e) { fallback(); }
           })();
