@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>지도 스타일 미리보기 (임시)</title>
   <!-- 임시 테스트 페이지(2026-10-17): 지도 스타일 비교용. 적용 후 삭제할 것. sitemap 미포함, noindex. -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
   <style>
     body{margin:0;font-family:'Noto Sans KR',sans-serif;background:#faf8f3;color:#1a1a1a}
     .wrap{max-width:900px;margin:0 auto;padding:16px}
@@ -16,7 +16,7 @@
     .tabs button.on{background:#C8A84B;color:#fff}
     #map{width:100%;height:460px;border:1px solid #e8e3d8}
     .note{font-size:12px;color:#888;margin-top:10px;line-height:1.6}
-    .pin{display:flex;align-items:center;gap:6px;white-space:nowrap}
+    .pin{cursor:default;display:flex;align-items:center;gap:6px;white-space:nowrap}
     .pin i{width:16px;height:16px;border-radius:50% 50% 50% 0;background:#C8A84B;border:2px solid #8A6F1F;transform:rotate(-45deg);display:block;flex:none}
     .pin span{background:#fff;border:1px solid #C8A84B;padding:4px 8px;font-size:12px;line-height:1.3}
   </style>
@@ -26,21 +26,30 @@
     <h1>지도 스타일 미리보기 (임시 페이지)</h1>
     <div class="tabs" id="tabs"></div>
     <div id="map"></div>
-    <div class="note">버튼으로 스타일을 바꿔가며 PC·모바일에서 확인해 주세요. 확대 단계는 13~18로 제한했고, 처음 화면은 확대 15입니다.</div>
+    <div class="note">버튼으로 스타일을 바꿔가며 PC·모바일에서 확인해 주세요. CARTO 타일은 API 키가 필요해서 OpenFreeMap(키 불필요)으로 교체했습니다. 확대 단계는 13~18, 처음 화면은 확대 15입니다.</div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
   <script>
     var LAT = 37.601394, LNG = 126.892178;
-    var map = L.map('map', { center: [LAT, LNG], zoom: 15, minZoom: 13, maxZoom: 18, scrollWheelZoom: false });
+    var OSM_RASTER = { version: 8,
+      sources: { osm: { type: 'raster', tileSize: 256, maxzoom: 19, tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], attribution: '&copy; OpenStreetMap contributors' } },
+      layers: [{ id: 'osm', type: 'raster', source: 'osm' }] };
     var styles = [
-      { name: '밝은 단순형 (Positron)', url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', attr: '&copy; OpenStreetMap &copy; CARTO' },
-      { name: '컬러 도로형 (Voyager)', url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', attr: '&copy; OpenStreetMap &copy; CARTO' },
-      { name: 'OSM 기본', url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', attr: '&copy; OpenStreetMap contributors' }
+      { name: '밝은 단순형 (Positron)', style: 'https://tiles.openfreemap.org/styles/positron' },
+      { name: '컬러 도로형 (Bright)', style: 'https://tiles.openfreemap.org/styles/bright' },
+      { name: '일러스트형 (Liberty)', style: 'https://tiles.openfreemap.org/styles/liberty' },
+      { name: 'OSM 기본', style: OSM_RASTER }
     ];
-    var layer = null, tabs = document.getElementById('tabs');
+    var map = new maplibregl.Map({ container: 'map', style: styles[0].style, center: [LNG, LAT], zoom: 15, minZoom: 13, maxZoom: 18 });
+    map.scrollZoom.disable();
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
+    var el = document.createElement('div');
+    el.className = 'pin';
+    el.innerHTML = '<i></i><span><b>OneTroy Bullion</b><br>DMC스타비즈 5st</span>';
+    new maplibregl.Marker({ element: el, anchor: 'bottom-left' }).setLngLat([LNG, LAT]).addTo(map);
+    var tabs = document.getElementById('tabs');
     function use(i) {
-      if (layer) map.removeLayer(layer);
-      layer = L.tileLayer(styles[i].url, { attribution: styles[i].attr, subdomains: 'abcd', maxZoom: 18 }).addTo(map);
+      map.setStyle(styles[i].style);
       Array.prototype.forEach.call(tabs.children, function (b, k) { b.className = k === i ? 'on' : ''; });
     }
     styles.forEach(function (s, i) {
@@ -49,9 +58,7 @@
       b.onclick = function () { use(i); };
       tabs.appendChild(b);
     });
-    L.marker([LAT, LNG], { icon: L.divIcon({ className: '', iconSize: [200, 24], iconAnchor: [8, 20],
-      html: '<div class="pin"><i></i><span><b>OneTroy Bullion</b><br>DMC스타비즈 5st</span></div>' }) }).addTo(map);
-    use(0);
+    tabs.children[0].className = 'on';
   </script>
 </body>
 </html>
