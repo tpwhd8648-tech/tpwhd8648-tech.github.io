@@ -157,7 +157,11 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
   const safeName = escapeHtml(name);
   const safeNameAttr = escapeAttr(name);
   const safeBrand = escapeHtml(brand);
-  const shortDesc = detail.split('\n')[0].slice(0, 80);
+  // detail은 ~60자마다 하드랩(\n)된 텍스트라 첫 문장이 여러 줄에 걸칠 수 있음 → 줄바꿈을 공백으로 합친 뒤 첫 문장(마침표 기준)만 사용.
+  // (이전: detail.split('\n')[0].slice(0, 80) → 문장이 중간에서 끊긴 메타 설명 발생, 2026-10-17 수정)
+  const flatDetail = detail.replace(/\s*\n\s*/g, ' ').trim();
+  const firstSentence = flatDetail.match(/^.*?[.!?](?=\s|$)/);
+  const shortDesc = firstSentence ? firstSentence[0] : flatDetail.slice(0, 80);
   const jsonLdDescription = detail.replace(/\n/g, ' ').slice(0, 300);
 
   // 화면에 실제로 표시되는 가격과 동일한 공식
@@ -226,7 +230,7 @@ function renderCoinPage(coin, krwPerOz, todayStr, relatedHtml = '') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OneTroy Bullion | ${safeName} 시세·가격 - 투자 금화</title>
-  <meta name="description" content="${escapeAttr(shortDesc)} 중량, 순도, 발행처 등 상세 정보와 실시간 국제 시세를 확인하고 안전하게 구매하세요. OneTroy Bullion이 정품을 보증합니다.">
+  <meta name="description" content="${escapeAttr(shortDesc)} OneTroy Bullion 정품 보증.">
   <link rel="canonical" href="${pageUrl}">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
