@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>지도 스타일 미리보기 (임시)</title>
+  <!-- 임시 테스트 페이지(2026-10-17): 지도 스타일 비교용. 적용 후 삭제할 것. sitemap 미포함, noindex. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <style>
+    body{margin:0;font-family:'Noto Sans KR',sans-serif;background:#faf8f3;color:#1a1a1a}
+    .wrap{max-width:900px;margin:0 auto;padding:16px}
+    h1{font-size:16px;margin:4px 0 12px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+    .tabs button{padding:9px 14px;font-size:13px;border:1px solid #C8A84B;background:#fff;color:#1a1a1a;cursor:pointer}
+    .tabs button.on{background:#C8A84B;color:#fff}
+    #map{width:100%;height:460px;border:1px solid #e8e3d8}
+    .note{font-size:12px;color:#888;margin-top:10px;line-height:1.6}
+    .pin{display:flex;align-items:center;gap:6px;white-space:nowrap}
+    .pin i{width:16px;height:16px;border-radius:50% 50% 50% 0;background:#C8A84B;border:2px solid #8A6F1F;transform:rotate(-45deg);display:block;flex:none}
+    .pin span{background:#fff;border:1px solid #C8A84B;padding:4px 8px;font-size:12px;line-height:1.3}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>지도 스타일 미리보기 (임시 페이지)</h1>
+    <div class="tabs" id="tabs"></div>
+    <div id="map"></div>
+    <div class="note">버튼으로 스타일을 바꿔가며 PC·모바일에서 확인해 주세요. 확대 단계는 13~18로 제한했고, 처음 화면은 확대 15입니다.</div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script>
+    var LAT = 37.601394, LNG = 126.892178;
+    var map = L.map('map', { center: [LAT, LNG], zoom: 15, minZoom: 13, maxZoom: 18, scrollWheelZoom: false });
+    var styles = [
+      { name: '밝은 단순형 (Positron)', url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', attr: '&copy; OpenStreetMap &copy; CARTO' },
+      { name: '컬러 도로형 (Voyager)', url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', attr: '&copy; OpenStreetMap &copy; CARTO' },
+      { name: 'OSM 기본', url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', attr: '&copy; OpenStreetMap contributors' }
+    ];
+    var layer = null, tabs = document.getElementById('tabs');
+    function use(i) {
+      if (layer) map.removeLayer(layer);
+      layer = L.tileLayer(styles[i].url, { attribution: styles[i].attr, subdomains: 'abcd', maxZoom: 18 }).addTo(map);
+      Array.prototype.forEach.call(tabs.children, function (b, k) { b.className = k === i ? 'on' : ''; });
+    }
+    styles.forEach(function (s, i) {
+      var b = document.createElement('button');
+      b.textContent = s.name;
+      b.onclick = function () { use(i); };
+      tabs.appendChild(b);
+    });
+    L.marker([LAT, LNG], { icon: L.divIcon({ className: '', iconSize: [200, 24], iconAnchor: [8, 20],
+      html: '<div class="pin"><i></i><span><b>OneTroy Bullion</b><br>DMC스타비즈 5st</span></div>' }) }).addTo(map);
+    use(0);
+  </script>
+</body>
+</html>
