@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="848" viewBox="0 0 380 424" role="img">
 <title>실측 4.3m x 5.8m 사무실 배치도: 9번 커튼, 13번 칸막이 반영</title>
-<desc>9번 커튼은 통로 폭 1.0m를 뺀 구간에 달려 있고, 10번 통로로 들어가면 안쪽 y 5.0m에 칸막이 13번이 서서 응대 구역에서 통로 너머가 보이지 않으며, 7번 책상과 의자는 칸막이 오른쪽으로 옮긴 배치도.</desc>
+<desc>9번 커튼은 통로 폭 1.0m를 뺀 구간에 달려 있고, 10번 통로로 들어가면 안쪽 y 5.0m에 칸막이 13번이 서서 응대 구역에서 통로 너머가 보이지 않으며, 7번 책상과 의자는 칸막이 오른쪽으로 옮긴 배치도. 천장 높이는 2.7m로 확인됨.</desc>
 <style>
 svg{--s:#5F5E5A;--border-stronger:#5F5E5A;--border-strong:#888780}
 text{font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
@@ -111,5 +111,5 @@ text{font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Got
 <text class="ts" x="112" y="386" dominant-baseline="central">공기청정기</text>
 <g class="c-pink"><rect x="230" y="381.5" width="16" height="9" rx="2" stroke-width="0.5"/></g>
 <text class="ts" x="252" y="386" dominant-baseline="central">칸막이</text>
-<text class="ts" x="190" y="408" text-anchor="middle">창문·입구 폭은 임의로 그린 값</text>
+<text class="ts" x="190" y="408" text-anchor="middle">천장 높이 2.7m(확인) · 창문·입구 폭은 임의로 그린 값</text>
 </svg>
