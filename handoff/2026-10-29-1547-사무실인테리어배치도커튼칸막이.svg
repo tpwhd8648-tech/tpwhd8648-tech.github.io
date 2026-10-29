@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="848" viewBox="0 0 380 424" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="880" viewBox="0 0 380 440" role="img">
 <title>실측 4.3m x 5.8m 사무실 배치도: 9번 커튼, 13번 칸막이 반영</title>
-<desc>9번 커튼은 통로 폭 1.0m를 뺀 구간에 달려 있고, 10번 통로로 들어가면 안쪽 y 5.0m에 칸막이 13번이 서서 응대 구역에서 통로 너머가 보이지 않으며, 7번 책상과 의자는 칸막이 오른쪽으로 옮긴 배치도. 천장 높이는 2.7m로 확인됨.</desc>
+<desc>9번 커튼은 통로 폭 0.8m를 뺀 구간에 달려 있고, 10번 통로로 들어가면 안쪽 y 5.0m에 칸막이 13번이 서서 응대 구역에서 통로 너머가 보이지 않으며, 7번 책상과 의자는 칸막이 오른쪽으로 옮긴 배치도. 천장 높이는 2.7m, 통로 폭은 0.8m로 확인됨.</desc>
 <style>
 svg{--s:#5F5E5A;--border-stronger:#5F5E5A;--border-strong:#888780}
 text{font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
@@ -22,7 +22,7 @@ text{font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Got
 .c-blue>rect,.c-blue>circle,rect.c-blue,circle.c-blue{fill:#E6F1FB;stroke:#185FA5}
 .c-blue>.th{fill:#0C447C}
 </style>
-<rect width="380" height="424" fill="#FFFFFF"/>
+<rect width="380" height="440" fill="#FFFFFF"/>
 <line x1="93" y1="20" x2="286.5" y2="20" stroke="var(--s)" stroke-width="0.5"/>
 <line x1="93" y1="15" x2="93" y2="25" stroke="var(--s)" stroke-width="0.5"/>
 <line x1="286.5" y1="15" x2="286.5" y2="25" stroke="var(--s)" stroke-width="0.5"/>
@@ -76,9 +76,9 @@ text{font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Got
 <text class="th" x="268" y="150" text-anchor="middle" dominant-baseline="central">4</text>
 <g class="c-teal"><rect x="250.5" y="177" width="36" height="63" rx="6" stroke-width="0.5"/><text class="th" x="268" y="208" text-anchor="middle" dominant-baseline="central">5</text></g>
 <circle cx="106.5" cy="213" r="6" class="c-blue" stroke-width="0.5"/>
-<line x1="93" y1="256" x2="138" y2="256" class="leader"/>
-<text class="th" x="118" y="244" text-anchor="middle" dominant-baseline="central">10</text>
-<path d="M138 256 q4 -4 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 l4.5 0" fill="none" stroke="#D4537E" stroke-width="2"/>
+<line x1="93" y1="256" x2="129" y2="256" class="leader"/>
+<text class="th" x="111" y="244" text-anchor="middle" dominant-baseline="central">10</text>
+<path d="M129 256 q4 -4 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 l5.5 0" fill="none" stroke="#D4537E" stroke-width="2"/>
 <text class="th" x="212" y="242" text-anchor="middle" dominant-baseline="central">9</text>
 <g class="c-pink"><rect x="93" y="285" width="54" height="4.5" rx="2" stroke-width="0.5"/></g>
 <text class="th" x="120" y="302" text-anchor="middle" dominant-baseline="central">13</text>
@@ -111,5 +111,6 @@ text{font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Got
 <text class="ts" x="112" y="386" dominant-baseline="central">공기청정기</text>
 <g class="c-pink"><rect x="230" y="381.5" width="16" height="9" rx="2" stroke-width="0.5"/></g>
 <text class="ts" x="252" y="386" dominant-baseline="central">칸막이</text>
-<text class="ts" x="190" y="408" text-anchor="middle">천장 높이 2.7m(확인) · 창문·입구 폭은 임의로 그린 값</text>
+<text class="ts" x="190" y="408" text-anchor="middle">천장 높이 2.7m · 통로 폭 0.8m (확인)</text>
+<text class="ts" x="190" y="424" text-anchor="middle">창문·입구 폭은 임의로 그린 값</text>
 </svg>
