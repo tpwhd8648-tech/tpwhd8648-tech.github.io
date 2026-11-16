@@ -40,6 +40,13 @@ const COIN_DESCRIPTIONS = [
     specs: { year: '2026', mint: '퍼스 민트 (Perth Mint)', country: '호주', purity: '99.99% (.9999) 순금', weight: '1oz (31.1g)', diameter: '32.6mm', thickness: '2.95mm', condition: '미사용 (Brilliant Uncirculated)', verified: true }
   },
   {
+    // 2026-11-16 세션: 사진(앞·뒷면)으로 추가. 연도·순도·중량·액면 100달러·P 마크는 사진에서 확인.
+    // 직경·두께는 2026 캥거루 값을 그대로 옮긴 것이라 공식 2027 규격 확인 전까지 verified: false 유지.
+    keywords: ['2027 캥거루', '2027 kangaroo'],
+    detail: `호주 퍼스 민트(Perth Mint)가 1986년부터 발행하는 골드 불리온 코인입니다.\n초기에는 'Australian Gold Nugget'이라는 이름으로 호주 천연금괴 도안을 사용하다가\n1989년부터 캥거루 도안으로 변경했으며, 현재의 'Australian Kangaroo'로 정식 명칭이\n바뀐 것은 2008년입니다. 2027년 도안에는 두 마리의 캥거루가 담겼습니다. 한 마리는 몸을 곧게\n세워 먼 곳을 응시하고, 다른 한 마리는 물가에 고개를 숙여 물을 마시는 모습으로, 아웃백의\n평온한 한때를 표현했습니다. 순도 99.99%(.9999) 순금이며, 뒷면에는 찰스 3세 국왕의 초상과\n액면가 100달러가 새겨져 있습니다. 매년 새롭게 디자인되는 캥거루 도안은 컬렉터들 사이에서도\n수집 가치가 높고, 퍼스 민트의 엄격한 품질 관리와 정부 보증 덕분에 신뢰도가 높아\n유럽·아시아 시장에서도 활발히 거래됩니다.`,
+    specs: { year: '2027', mint: '퍼스 민트 (Perth Mint)', country: '호주', purity: '99.99% (.9999) 순금', weight: '1oz (31.1g)', diameter: '32.6mm', thickness: '2.95mm', condition: '미사용 (Brilliant Uncirculated)', verified: false }
+  },
+  {
     keywords: ['2026 버팔로', '2026 buffalo'],
     detail: `미국 조폐국(United States Mint)이 2006년부터 발행하는 미국 최초의 99.99% 순금 불리온 코인입니다.\n1913~1938년까지 통용된 버팔로 니켈(Buffalo Nickel)의 디자인을 계승해,\n아메리카 원주민 초상(앞면)과 아메리카들소(뒷면)가 새겨져 있습니다.\n아메리칸 이글과 달리 합금 없이 순금 99.99%로 제작되어, 순도를 중시하는 투자자들에게\n특히 선호됩니다.`,
     specs: { year: '2026', mint: '미국 조폐국 (United States Mint)', country: '미국', purity: '99.99% (.9999) 순금', weight: '1oz (31.1g)', diameter: '32.7mm', thickness: '2.95mm', condition: '미사용 (Brilliant Uncirculated)', verified: true }

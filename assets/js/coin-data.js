@@ -46,6 +46,7 @@ const IMAGE_MAP = [
   { keywords: ['2026 브리티시라이언', '2026 british lion'],            file: 'products/2026/british-lion.png' },
   { keywords: ['2025 레이디저스티스', '2025 lady justice'],            file: 'products/2025/lady-justice.png' },
   { keywords: ['2027 양띠', '2027 루나양', '2027 goat', '2027 year of goat', '2027 sheep'], file: 'products/2027/goat.png' },
+  { keywords: ['2027 캥거루', '2027 kangaroo'],                        file: 'products/2027/kangaroo.png' },
 ];
 
 function getImageForProduct(name) {
