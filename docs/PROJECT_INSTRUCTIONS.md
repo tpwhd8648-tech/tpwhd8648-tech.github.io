@@ -216,6 +216,46 @@ KST로 알고 있으면서 시간만 별도로 UTC `date` 명령으로 구하는
 
 ---
 
+## 5. 새 상품(코인) 추가 요청 시 — 사진을 받으면 아래 순서로 한 번에 처리
+
+2026-11-16 "2027 캥거루" 추가 때 확립한 절차다. 사용자는 보통 코인 앞·뒷면 사진 2장을
+보낸다. 사진이 안 보이면(첨부 누락) 먼저 다시 요청한다.
+
+1. **사진 확인**: 연도·중량·순도·액면가·발행처(마크)를 사진에서 읽는다. 사진에서 확인한
+   값과 다른 코인에서 옮겨온 값(직경·두께 등)을 구분한다.
+2. **이미지 저장** (`images/products/연도/{slug}.png`, 뒷면은 `{slug}-back.png`):
+   - 주 도안(동물·상징이 있는 면) = `{slug}.png`, 초상·액면가 면 = `-back.png`.
+   - 규격은 1200×1200 RGB 흰 배경. 흰 배경 기준으로 코인 영역을 크롭 → 긴 변 1110px로
+     리사이즈 → 1200×1200 캔버스 중앙에 붙인다(Pillow).
+   - `images/`는 sparse-checkout에서 제외돼 폴더가 없다. `mkdir -p`로 만들고, 커밋할 때는
+     `git add --sparse`를 쓴다.
+3. **`assets/js/coin-data.js`의 IMAGE_MAP에 항목 추가**: `keywords[0]`은 반드시 "연도 + 한글
+   정식명"(예: `2027 캥거루`). 영문 키워드도 함께 넣는다.
+4. **`assets/js/coin-descriptions.js`에 항목 추가**: keywords는 IMAGE_MAP과 동일하게. `detail`은
+   같은 시리즈의 기존 설명을 바탕으로 쓰되 확인되지 않은 사실(기념 문구 등)은 넣지 않는다.
+   사진·공식 자료로 확인하지 못한 specs가 있으면 `verified: false`로 둔다. (2026 캥거루처럼
+   specs 줄이 중복되는 항목은 Edit 앵커가 겹치므로, 삽입 위치 바로 뒤 항목의 `keywords` 줄을
+   앵커로 쓴다.)
+5. **구글 시트("상품" 탭) 붙여넣기용 데이터 제공**: 컬럼 순서는
+   `상품명 / brand / category / premium / available / same_day / visible / order / image`
+   (탭 구분). 사용자가 시트 내용을 붙여주면 새 행을 넣고 order를 다시 매겨, **A2부터 통째로
+   붙여넣을 수 있는 탭 구분 코드블록**으로 돌려준다(헤더 제외).
+   - 시트의 상품명에 코드의 keywords 문자열(예: `2027 캥거루`)이 들어 있어야 한다. 시트 행이
+     없으면 `generate-coin-pages.js`가 해당 코인을 건너뛴다.
+   - 사용자가 주지 않은 값(프리미엄·재고·당일 출고·노출)은 임시값으로 채우고 **임시값임을
+     반드시 명시**한다. visible은 `all`(메인 포함) 또는 `coins`(코인 목록만).
+   - 사용자가 순서를 지정하면(예: "3번으로") 나머지 행의 order를 모두 밀어 반영한다.
+6. **검증·커밋**: `node --check`로 두 JS 파일 문법을 확인하고 커밋한다(트레일러 포함).
+7. **푸시**: 섹션 3 규칙대로 사용자의 명시적 "푸쉬해줘" 확인 뒤에만. 원격에 Actions 자동 커밋이
+   쌓여 있을 수 있으므로 푸시 전에 `git fetch --depth=1 origin main`으로 확인한다.
+8. **Actions 실행**: 사용자가 시트를 수정한 뒤 "액션도 해줘"라고 하면
+   `generate-coin-pages.yml`을 수동 실행(workflow_dispatch)한다. 이 세션 환경에서는 사용자
+   PAT로 GitHub API를 호출하면 403이 나므로, `add_repo`(access: "push")로 레포 접근을 먼저
+   붙인 뒤 `gh api -X POST repos/.../actions/workflows/generate-coin-pages.yml/dispatches -f ref=main`
+   을 쓴다. 실행 완료까지 확인하고 `coins/coin-{slug}.html`과 `sitemap.xml` 반영 여부를 보고한다.
+9. **마무리 안내**: 모바일 확인 항목(상세페이지 접속, 앞·뒷면 이미지, 목록 순서), 임시값(프리미엄 등),
+   `verified: false` 스펙 확인 필요 여부, 토큰 폐기 권장(저장하지 않음)을 알려준다.
+
 ## 참고 사항
 
 - 이 문서는 레포 루트의 `handoff/` 폴더와 동일한 노출 수준이다. GitHub Pages가
