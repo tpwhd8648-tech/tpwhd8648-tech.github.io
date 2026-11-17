@@ -47,11 +47,11 @@
           <!-- 정식 주소 확정 반영(2026-10-16): 경기도 고양시 덕양구 꽃마을로 46 (도로명,
                지번 향동동 471, DMC스타비즈 5st). 이전 임시 주소(종로구 봉익동 136)는 폐기. 전화번호는
                정식 번호 확정 시 주소 뒤에 "<br>실제 전화번호" 형태로 추가할 것.
-               영업시간은 매일 09:00-20:00, 카카오톡 문의는 24시간 별도 운영. -->
+               영업시간은 매일 09:00-20:00. -->
           <div class="location-item">
             <strong>OneTroy Bullion</strong>
             <p>경기도 고양시 덕양구 꽃마을로 46, DMC스타비즈 5st<br><span style="display:inline-flex;align-items:center;gap:6px;">010-8266-7773 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="문자 가능"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span></p>
-            <p>매일 09:00 - 20:00<br>카카오톡 문의 24시간 가능</p>
+            <p>매일 09:00 - 20:00</p>
           </div>
           <!-- "강남 지점": 주소/전화번호가 실제 정보인지 확정되지 않아
                삭제함 (2026-06-21). 사실 확인 후 실제 정보로 다시 추가할 것. -->
