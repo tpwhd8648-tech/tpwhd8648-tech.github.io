@@ -50,7 +50,7 @@
                영업시간은 매일 09:00-20:00, 카카오톡 문의는 24시간 별도 운영. -->
           <div class="location-item">
             <strong>OneTroy Bullion</strong>
-            <p>경기도 고양시 덕양구 꽃마을로 46, DMC스타비즈 5st</p>
+            <p>경기도 고양시 덕양구 꽃마을로 46, DMC스타비즈 5st<br><span style="display:inline-flex;align-items:center;gap:6px;">010-8266-7773 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="문자 가능"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span></p>
             <p>매일 09:00 - 20:00<br>카카오톡 문의 24시간 가능</p>
           </div>
           <!-- "강남 지점": 주소/전화번호가 실제 정보인지 확정되지 않아
@@ -90,6 +90,7 @@
         <p>대표: 정세종</p>
         <p>사업자등록번호: 898-26-02365</p>
         <p>경기도 고양시 덕양구 꽃마을로 46, DMC스타비즈 5st</p>
+        <p>전화번호: 010-8266-7773</p>
       </div>
       <!-- "귀금속은 투자 위험이 있습니다..." 투자 위험 고지 문구: 사용자 요청으로
            삭제함 (2026-08-24). -->
