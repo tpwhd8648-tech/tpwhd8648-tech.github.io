@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  var KAKAO_URL = 'https://open.kakao.com/o/sB6Gduni';
+  var KAKAO_URL = 'https://open.kakao.com/o/syk7MkYi';
   var PHONE_RAW = '01082667773';
   var PHONE_DISPLAY = '010-8266-7773';
 
